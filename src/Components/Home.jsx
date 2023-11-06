@@ -1,7 +1,7 @@
 import Navbar from './Navbar';
 import AboutUs from './mainPageItems/AboutUs';
 import WhatWeDo from './mainPageItems/WhatWeDo';
-// import CourseLinks from './mainPageItems/courseLinks';
+import CourseLinks from './mainPageItems/CourseLinks'
 
 const Home = () => {
     return ( 
@@ -12,7 +12,7 @@ const Home = () => {
 
             <WhatWeDo />
 
-            {/* <CourseLinks /> */}
+            <CourseLinks />
         </div>
      );
 }
