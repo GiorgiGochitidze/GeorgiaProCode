@@ -29,7 +29,7 @@
     flex-direction: column;
 }
 
-button {
+.course-startbtn {
   padding: 1.3em 3em;
   font-size: 12px;
   text-transform: uppercase;
@@ -48,13 +48,13 @@ button {
   font-family: 'georgian-font', sans-serif;
 }
 
-button:hover {
+.course-startbtn:hover {
   background-color: #23c483;
   box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
   color: #fff;
   transform: translateY(-7px);
 }
 
-button:active {
+.course-startbtn:active {
   transform: translateY(-1px);
 }

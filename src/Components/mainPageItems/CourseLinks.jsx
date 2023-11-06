@@ -12,7 +12,7 @@ const CourseLinks = () => {
         </div>
         <div className="course-cards">
           CSS
-          <button> კურსის დაწყება</button>
+          <button className="course-startbtn"> კურსის დაწყება</button>
         </div>
       </div>
     </div>

@@ -1,6 +1,9 @@
 import './CSS/Navbar.css'
+import React, { useState } from 'react';
+
 
 const Navbar = () => {
+
     return ( 
         <header>
             <nav>
@@ -14,6 +17,8 @@ const Navbar = () => {
                 <p>კურსები</p>
                 <p>კონტაქტი</p>
                 <p>დახმარება</p>
+
+                <button className='navbar-button'>მენიუ</button>
             </nav>
         </header>
      );
