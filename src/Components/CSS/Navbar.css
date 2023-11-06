@@ -1,0 +1,61 @@
+header{
+    width: 95%;
+    height: 60px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+}
+
+nav img{
+    width: 50px;
+}
+
+nav div{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav p {
+    height: 22px;
+    position: relative; /* Add relative positioning */
+    transition: all 0.2s; /* Increase the transition duration for smoother effect */
+    cursor: pointer;
+  }
+  
+  nav p::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px; /* Set the height of the border-bottom */
+    bottom: 0;
+    left: 0; /* Start from the left */
+    background-color: rgb(17, 17, 173);
+    transition: width 0.2s; /* Animate the width property */
+  }
+  
+  nav p:hover::before {
+    width: 100%; /* Animate the width to 100% */
+  }
+  
+  /* Remove the 'border-bottom' property from 'nav p:hover' */
+  
+
+  
