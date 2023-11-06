@@ -46,3 +46,9 @@
     margin-bottom: 10px;
     text-align: center;
 }
+
+@media screen and (max-width: 350px) {
+    .groupMembers{
+        width: 90%;
+    }
+}

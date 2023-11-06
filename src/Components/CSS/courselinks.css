@@ -16,6 +16,7 @@
     align-items: center;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    gap: 20px;
 }
 
 .course-cards{
@@ -57,4 +58,23 @@
 
 .course-startbtn:active {
   transform: translateY(-1px);
+}
+
+@media screen and (max-width: 640px) {
+  .courses-list{
+    flex-wrap: wrap;
+    height: auto;
+    padding-block: 20px;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .course-cards{
+    width: 93%;
+  }
+
+  .course-startbtn{
+    width: 95%;
+    height: 50px;
+  }
 }

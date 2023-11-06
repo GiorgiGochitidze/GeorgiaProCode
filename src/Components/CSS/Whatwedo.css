@@ -23,3 +23,28 @@ h3{
     align-items: center;
     gap: 50px;
 }
+
+.webimage{
+    width: 600px;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1060px) {
+    .whatdoing-container{
+        flex-direction: column;
+        text-align: center;
+        text-align: justify;
+    }
+
+    .whatwedo-container{
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 610px) {
+    .webimage{
+        width: 100%;
+    }
+}

@@ -18,7 +18,7 @@ const Navbar = () => {
                 <p>კონტაქტი</p>
                 <p>დახმარება</p>
 
-                <button className='navbar-button'>მენიუ</button>
+                <button className='menu-button'>მენიუ</button>
             </nav>
         </header>
      );

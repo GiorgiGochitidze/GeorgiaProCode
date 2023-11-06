@@ -8,7 +8,7 @@ const CourseLinks = () => {
       <div className="courses-list">
         <div className="course-cards">
           HTML
-          <button> კურსის დაწყება</button>
+          <button className="course-startbtn"> კურსის დაწყება</button>
         </div>
         <div className="course-cards">
           CSS

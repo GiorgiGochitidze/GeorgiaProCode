@@ -1,5 +1,5 @@
 import '../CSS/Whatwedo.css'
-import coding from './videos/coding.mp4'
+import coding from '../../assets/imageForcoding.jpg'
 
 const WhatWeDo = () => {
     return ( 
@@ -18,9 +18,7 @@ const WhatWeDo = () => {
                 სადაც შეეძლებათ თავის თავის განვითარება.
                 </p>
 
-                <video controls autoPlay loop width='600px' height='300px'>
-                    <source src={coding} type="video/mp4" />
-                </video>
+                <img className='webimage' src={coding} alt="coding image" />
             </div>
         </div>
      );
