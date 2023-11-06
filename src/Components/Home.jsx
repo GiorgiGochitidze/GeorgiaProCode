@@ -1,6 +1,7 @@
 import Navbar from './Navbar';
 import AboutUs from './mainPageItems/AboutUs';
 import WhatWeDo from './mainPageItems/WhatWeDo';
+import CourseLinks from './mainPageItems/courseLinks';
 
 const Home = () => {
     return ( 
@@ -10,6 +11,8 @@ const Home = () => {
             <AboutUs />
 
             <WhatWeDo />
+
+            <CourseLinks />
         </div>
      );
 }

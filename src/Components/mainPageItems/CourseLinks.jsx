@@ -1,0 +1,22 @@
+import "../CSS/courselinks.css";
+
+const CourseLinks = () => {
+  return (
+    <div className="courseList-container">
+      <h3>ჩვენი კურსები:</h3>
+
+      <div className="courses-list">
+        <div className="course-cards">
+          HTML
+          <button> კურსის დაწყება</button>
+        </div>
+        <div className="course-cards">
+          CSS
+          <button> კურსის დაწყება</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CourseLinks;
