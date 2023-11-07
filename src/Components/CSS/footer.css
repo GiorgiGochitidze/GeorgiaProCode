@@ -6,6 +6,7 @@ footer{
     color: white;
     display: flex;
     justify-content: space-around;
+	flex-direction: column;
 }
 
 h2{
@@ -16,6 +17,15 @@ h2{
 div p{
     font-size: 20px;
     font-weight: 300;
+}
+
+.sponsor{
+	background-color: #1d1e21;
+	margin-bottom: -70px;
+    margin-top: 50px;
+	font-size: 16px;
+	color: gray;
+	text-align: center;
 }
 
 body{
