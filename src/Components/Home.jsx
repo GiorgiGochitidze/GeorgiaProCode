@@ -2,6 +2,7 @@ import Navbar from './Navbar';
 import AboutUs from './mainPageItems/AboutUs';
 import WhatWeDo from './mainPageItems/WhatWeDo';
 import CourseLinks from './mainPageItems/CourseLinks'
+import Footer from './mainPageItems/Footer';
 
 const Home = () => {
     return ( 
@@ -13,6 +14,8 @@ const Home = () => {
             <WhatWeDo />
 
             <CourseLinks />
+
+            <Footer />
         </div>
      );
 }
