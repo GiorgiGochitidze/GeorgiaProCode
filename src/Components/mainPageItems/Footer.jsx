@@ -6,7 +6,7 @@ const Footer = () => {
         <div className="container">
             <div className="row">
                 <div className="footer-col">
-                    <h4>company</h4>
+                    <h4>კომპანია</h4>
                     <ul>
                         <li><a href="#">ჩვენს შესახებ</a></li>
                         <li><a href="#">ჩვენი სერვისები</a></li>
@@ -14,7 +14,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="footer-col">
-                    <h4>get help</h4>
+                    <h4>დახმარება</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
                         <li><a href="https://www.facebook.com/groups/1307912069858435">დაგვიკავშირდით ფეისბუქზე</a></li>
