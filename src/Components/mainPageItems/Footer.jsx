@@ -32,9 +32,8 @@ const Footer = () => {
                 <div className="footer-col">
                     <h4>მოგვყევით სოც ქსელებში</h4>
                     <div className="social-links">
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/groups/1307912069858435" target='_blank'><i className="fab fa-facebook-f"></i></a>
+                        <a href="#"><i className="fab fa-discord"></i></a>
                         <a href="#"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
