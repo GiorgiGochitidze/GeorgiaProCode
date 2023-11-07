@@ -33,7 +33,7 @@ const Footer = () => {
                     <h4>მოგვყევით სოც ქსელებში</h4>
                     <div className="social-links">
                         <a href="https://www.facebook.com/groups/1307912069858435" target='_blank'><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-discord"></i></a>
+                        <a href="https://discord.gg/3qUH8x7ZZm" target='_blank'><i className="fab fa-discord"></i></a>
                         <a href="#"><i className="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
     padding: 1rem;
     max-width: 350px;
     border-radius: 0.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   }
   
   .form-title {
@@ -50,4 +50,16 @@
     width: 100%;
     border-radius: 0.5rem;
     text-transform: uppercase;
+  }
+
+  .contact-form-container{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  input::placeholder{
+    font-family: 'georgian-font', sans-serif;
   }
