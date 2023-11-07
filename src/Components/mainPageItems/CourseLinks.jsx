@@ -1,4 +1,4 @@
-import "../CSS/courselinks.css";
+import "../CSS/mainpagecss/courselinks.css";
 
 const CourseLinks = () => {
   return (

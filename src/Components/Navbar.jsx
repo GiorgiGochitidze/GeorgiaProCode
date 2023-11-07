@@ -1,27 +1,26 @@
-import './CSS/Navbar.css'
-import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import "./CSS/mainpagecss/Navbar.css";
 
+const Navbar = ({handleItemClick}) => {
+    
+  return (
+      <header>
+        <nav>
+          <div>
+            <img src="/logo.png" alt="our command logo" />
+            <h3>GeorgiaProCode</h3>
+          </div>
 
-const Navbar = () => {
+          <Link to='/' style={{textDecoration: 'none', color: 'black'}}><p>მთავარი</p></Link>
+          <p>კურსები</p>
+          <Link to='/ContactUs' style={{textDecoration: 'none', color: 'black'}}><p>კონტაქტი</p></Link>
+          <p>დახმარება</p>
+          <p>ჩვენს შესახებ</p>
 
-    return ( 
-        <header>
-            <nav>
-                <div>
-                    <img src="/logo.png" alt="our command logo" />
-                    <h3>GeorgiaProCode</h3>
-                </div>
+          <button onClick={handleItemClick} className="menu-button">მენიუ</button>
+        </nav>
+      </header>
+  );
+};
 
-                <p>მთავარი</p>
-                <p>ჩვენს შესახებ</p>
-                <p>კურსები</p>
-                <p>კონტაქტი</p>
-                <p>დახმარება</p>
-
-                <button className='menu-button'>მენიუ</button>
-            </nav>
-        </header>
-     );
-}
- 
 export default Navbar;

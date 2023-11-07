@@ -1,4 +1,4 @@
-import '../CSS/Whatwedo.css'
+import '../CSS/mainpagecss/Whatwedo.css'
 import coding from '../../assets/imageForcoding.jpg'
 
 const WhatWeDo = () => {

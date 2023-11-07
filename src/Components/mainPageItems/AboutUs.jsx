@@ -1,4 +1,4 @@
-import "../CSS/aboutUsInMain.css";
+import "../CSS/mainpagecss/aboutUsInMain.css";
 import lasha from "../../assets/lasha.jpg";
 
 const AboutUs = () => {

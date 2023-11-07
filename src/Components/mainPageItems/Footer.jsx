@@ -1,4 +1,4 @@
-import '../CSS/footer.css'
+import '../CSS/mainpagecss/footer.css'
 
 const Footer = () => {
     return ( 
@@ -17,7 +17,7 @@ const Footer = () => {
                     <h4>დახმარება</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="https://www.facebook.com/groups/1307912069858435">დაგვიკავშირდით ფეისბუქზე</a></li>
+                        <li><a href="https://www.facebook.com/groups/1307912069858435" target='_blank'>დაგვიკავშირდით ფეისბუქზე</a></li>
                     </ul>
                 </div>
                 {/* <div className="footer-col">
