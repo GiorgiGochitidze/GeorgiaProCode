@@ -50,6 +50,8 @@
     width: 100%;
     border-radius: 0.5rem;
     text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'georgian-font', sans-serif;
   }
 
   .contact-form-container{
@@ -92,4 +94,18 @@
   
   .textarea::-webkit-scrollbar-thumb {
     background: transparent;
+  }
+
+  @media screen and (max-width: 375px){
+    .form{
+        width: 95%;
+    }
+
+    .textarea{
+        width: 100%;
+    }
+
+    .input-container input{
+        width: 100%;
+    }
   }

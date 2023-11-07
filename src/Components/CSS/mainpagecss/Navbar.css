@@ -163,3 +163,9 @@ nav p {
       width: 95%;
     }
   }
+
+  @media screen and (min-width: 810px) {
+    .navbar-dropmenu-container{
+      display: none;
+    }
+  }
