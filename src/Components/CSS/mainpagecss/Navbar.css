@@ -1,37 +1,39 @@
 header{
-    width: 95%;
-    height: 60px;
+    width: 100%;
+    height: auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
-    margin: auto;
-    margin-top: 50px;
-    border-radius: 50px;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     transition: all 0.3s;
+    background: rgba(105, 100, 247, 0.2);
+    flex-direction: column;
+    padding-block: 50px;
+    gap: 30px;
 }
 
 nav{
     display: flex;
     width: 100%;
-    height: 100%;
-    justify-content: space-between;
+    height: 70px;
     align-items: center;
     padding-inline: 20px;
+    justify-content: center;
+    gap: 50px;
 }
 
 nav img{
     width: 50px;
 }
 
-nav div{
+nav > div{
     width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
     font-family: 'Roboto', sans-serif;
+    color: #6964f7;
+    margin-left: 0;
 }
 
 nav p {
@@ -39,6 +41,7 @@ nav p {
     position: relative; /* Add relative positioning */
     transition: all 0.2s; /* Increase the transition duration for smoother effect */
     cursor: pointer;
+    color: #5c5776;
   }
   
   nav p::before {
@@ -132,6 +135,69 @@ nav p {
     border-radius: 10px;
   }
 
+  .searchAndImage-container{
+    width: 100%;
+    height: auto;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .content-container{
+    width: 700px;
+    height: auto;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #18113c;
+    letter-spacing: 2px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .searchbar-container{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .searchBtn{
+    width: 100px;
+    height: 50px;
+    border: unset;
+    cursor: pointer;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: #6964f7;
+    color: white;
+    font-family: 'georgian-font', sans-serif;
+    transition: all 0.2s ease;
+  }
+
+  .searchBtn:hover{
+    background: #605af7;
+  }
+
+   .searchBar-input{
+    width: 390px;
+    height: 50px;
+    border-radius: 0;
+    border: 1px solid transparent;
+    padding-inline: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-family: 'georgian-font', sans-serif;
+    color: #6964f7;
+   }
+
+   .searchBar-input:focus{
+    outline: none;
+   }
+
   @media screen and (max-width: 810px) {
     nav p{
       display: none;
@@ -139,33 +205,5 @@ nav p {
 
     .menu-button{
       display: flex;
-    }
-
-    nav{
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    header{
-      width: 400px;
-    }
-  }
-
-  @media screen and (max-width: 450px) {
-    nav{
-      flex-direction: column;
-    }
-
-    header{
-      height: auto;
-      padding-block: 10px;
-      width: 95%;
-    }
-  }
-
-  @media screen and (min-width: 810px) {
-    .navbar-dropmenu-container{
-      display: none;
     }
   }
