@@ -198,6 +198,10 @@ nav p {
     outline: none;
    }
 
+   .girl-image{
+    width: auto;
+   }
+
   @media screen and (max-width: 810px) {
     nav p{
       display: none;
@@ -217,5 +221,17 @@ nav p {
   @media screen and (max-width: 330px){
     .searchBar-input{
       width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 410px) {
+    .girl-image{
+      width: 100vw;
+    }
+  }
+
+  @media screen and (max-width: 280px){
+    .content-container{
+      word-break: break-all;
     }
   }

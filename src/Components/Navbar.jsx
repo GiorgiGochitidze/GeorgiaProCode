@@ -36,7 +36,7 @@ const Navbar = ({handleItemClick}) => {
               </div>
           </div>
                       {/* image of girl in navbar */}
-          <img src={main} alt="girl image" />
+          <img className="girl-image" src={main} alt="girl image" />
         </div>
       </header>
   );
