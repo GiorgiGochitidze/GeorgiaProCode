@@ -2,13 +2,52 @@ import '../CSS/mainpagecss/totalItems.css'
 import peopleicon from '../../assets/peopleicon.png'
 import hat from '../../assets/hat.png'
 import circle from '../../assets/circle.png'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TotalItems = () => {
 
-    const [totalLearners, setTotalLearners] = useState(0)
-    const [totalGraduated, setTotalGraduated] = useState(0)
-    const [totalCourses, setTotalCourses] = useState(0)
+    const [totalLearners, setTotalLearners] = useState(2969)
+    const [totalGraduated, setTotalGraduated] = useState(1665)
+    const [totalCourses, setTotalCourses] = useState(258)
+
+    useEffect(() => {
+        const animateCount = (targetValue, setStateFunction) => {
+          const step = Math.ceil(targetValue / 350);
+          let currentValue = 0;
+    
+          const interval = setInterval(() => {
+            currentValue += step;
+            setStateFunction(currentValue);
+    
+            if (currentValue >= targetValue) {
+              setStateFunction(targetValue);
+              clearInterval(interval);
+            }
+          }, 10);
+        };
+    
+        const handleScroll = () => {
+          const element = document.querySelector('.totalItems-container');
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+            
+            if (isVisible) {
+              animateCount(2969, setTotalLearners);
+              animateCount(1665, setTotalGraduated);
+              animateCount(258, setTotalCourses);
+              window.removeEventListener('scroll', handleScroll);
+            }
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+    
+        // Cleanup: Remove the event listener when the component unmounts
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
 
     return ( 
         <div className='totalItems-container'>
