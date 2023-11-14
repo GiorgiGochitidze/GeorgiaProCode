@@ -1,12 +1,27 @@
 import { Link } from "react-router-dom";
 import "./CSS/mainpagecss/Navbar.css";
 import main from '../assets/main.png'
+import menu from '../assets/menu.png'
+import React, { useState } from 'react';
 
-const Navbar = ({handleItemClick}) => {
+
+const Navbar = () => {
+
+  const [navbarMenu, setNavbarMenu] = useState(false)
     
   return (
       <header>
+
+        {navbarMenu && 
+          <div className="navbar-menu-container">
+                      
+          </div>
+        }
+
         <nav>
+
+          <button onClick={() => navbarMenu ? setNavbarMenu(false) : setNavbarMenu(true)} className="navbar-closeOpen-btn"><img src={menu} alt="" /></button>
+
           <div>
             <img src="/logo.png" alt="our command logo" />
             <h3>GeorgiaProCode</h3>
@@ -19,7 +34,6 @@ const Navbar = ({handleItemClick}) => {
           <p>შესვლა</p>
           <p>რეგისტრაცია</p>
 
-          <button onClick={handleItemClick} className="menu-button">მენიუ</button>
         </>
 
         </nav>

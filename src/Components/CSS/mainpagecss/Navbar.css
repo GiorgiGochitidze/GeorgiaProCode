@@ -32,7 +32,6 @@ nav > div{
     gap: 15px;
     font-family: 'Roboto', sans-serif;
     color: #6964f7;
-    margin-left: 0;
 }
 
 nav p {
@@ -59,31 +58,6 @@ nav p {
   }
   
   /* Remove the 'border-bottom' property from 'nav p:hover' */
-  
-
-  .menu-button {
-    display: none;
-    padding: 1.3em 3em;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-    font-family: 'georgian-font', sans-serif;
-  }
-  
-  .menu-button:hover {
-    background-color: #23c483;
-    box-shadow: 0px 10px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-  }
 
   .navbar-dropmenu-container{
     width: 100%;
@@ -202,21 +176,63 @@ nav p {
     width: auto;
    }
 
-  @media screen and (max-width: 810px) {
+   /* responsive navbar menu styles start */
+
+   .navbar-menu-container{
+    width: 100%;
+    height: 650px;
+    background: red;
+    position: fixed;
+    margin-top: 0;
+   }
+
+   .navbar-closeOpen-btn img{
+    width: 30px;
+   }
+
+   .navbar-closeOpen-btn{
+    display: none;
+    background: #6964f7;
+    border: unset;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+   }
+
+   .navbar-closeOpen-btn:hover{
+    background-color: #605af7;
+   }
+   
+
+   /* responsive navbar menu styles end */
+
+  @media screen and (max-width: 990px) {
+      .searchAndImage-container{
+        flex-wrap: wrap;
+      }
+    }
+
+  @media screen and (max-width: 880px){
     nav p{
       display: none;
     }
 
-    .menu-button{
+    nav > div{
+      margin-left: 100px;
+    }
+
+    .navbar-closeOpen-btn{
       display: flex;
     }
   }
+ 
 
-  @media screen and (max-width: 990px) {
-    .searchAndImage-container{
-      flex-wrap: wrap;
+  @media screen and (max-width: 410px) {
+      .girl-image{
+        width: 100vw;
+      }
     }
-  }
 
   @media screen and (max-width: 330px){
     .searchBar-input{
@@ -224,14 +240,11 @@ nav p {
     }
   }
 
-  @media screen and (max-width: 410px) {
-    .girl-image{
-      width: 100vw;
-    }
-  }
-
+  
   @media screen and (max-width: 280px){
     .content-container{
       word-break: break-all;
     }
   }
+
+  
