@@ -1,7 +1,6 @@
 header{
     width: 100%;
     height: auto;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: flex;
     overflow: hidden;
     transition: all 0.3s;
@@ -164,6 +163,7 @@ nav p {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-inline: 10px;
   }
   .searchBtn{
     width: 100px;
@@ -183,7 +183,7 @@ nav p {
   }
 
    .searchBar-input{
-    width: 390px;
+    width: 90%;
     height: 50px;
     border-radius: 0;
     border: 1px solid transparent;
@@ -205,5 +205,17 @@ nav p {
 
     .menu-button{
       display: flex;
+    }
+  }
+
+  @media screen and (max-width: 990px) {
+    .searchAndImage-container{
+      flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (max-width: 330px){
+    .searchBar-input{
+      width: 50%;
     }
   }
