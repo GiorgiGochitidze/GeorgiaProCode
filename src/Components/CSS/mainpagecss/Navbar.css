@@ -18,6 +18,10 @@ nav{
     padding-inline: 20px;
     justify-content: center;
     gap: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #E1E1FD;
 }
 
 nav img{
@@ -115,6 +119,7 @@ nav p {
     display: flex;
     justify-content: center;
     gap: 10px;
+    margin-top: 80px;
   }
 
   .content-container{
@@ -179,19 +184,23 @@ nav p {
    /* responsive navbar menu styles start */
 
    .navbar-menu-container{
+    display: none;
     width: 100%;
     height: 650px;
     background: red;
     position: fixed;
-    margin-top: 0;
    }
 
    .navbar-closeOpen-btn img{
-    width: 30px;
+    box-sizing: border-box;
    }
 
    .navbar-closeOpen-btn{
+    width: 40px;
+    height: 40px;
     display: none;
+    justify-content: center;
+    align-items: center;
     background: #6964f7;
     border: unset;
     padding: 5px;
@@ -223,6 +232,10 @@ nav p {
     }
 
     .navbar-closeOpen-btn{
+      display: flex;
+    }
+
+    .navbar-menu-container{
       display: flex;
     }
   }
