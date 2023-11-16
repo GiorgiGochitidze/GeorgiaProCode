@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Navbar from "./Components/Navbar";
 import CoursesPage from "./Components/CoursesPage/CoursesPage";
 import LogIn from './Components/LogInPage/LogIn'
+import Footer from "./Components/mainPageItems/Footer";
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
         <Route path="/Courses" element={<CoursesPage />} />
         <Route path="/LogIn" element={<LogIn />} />
       </Routes>
+
+      <Footer />
     </>
     </Router>
   );

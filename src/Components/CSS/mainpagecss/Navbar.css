@@ -6,7 +6,7 @@ header{
     transition: all 0.3s;
     background: rgba(105, 100, 247, 0.2);
     flex-direction: column;
-    
+    z-index: 2;
     gap: 30px;
 }
 
@@ -22,6 +22,7 @@ nav{
     top: 0;
     left: 0;
     background: #E1E1FD;
+    z-index: 2;
 }
 
 nav img{
