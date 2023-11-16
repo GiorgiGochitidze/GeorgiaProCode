@@ -7,7 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Navbar = () => {
-  const [isNavbarVisible, setNavbarVisibility] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [buttonImage, setButtonImage] = useState(menu);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Navbar = () => {
   }, [isNavbarVisible]);
 
   const toggleNavbar = () => {
-    setNavbarVisibility(!isNavbarVisible);
+    setIsNavbarVisible(!isNavbarVisible);
   };
 
 
@@ -30,16 +30,16 @@ const Navbar = () => {
       
       <div className="navbar-menu-container">
         <div className='drop-menu' data-aos="fade-right" data-aos-duration="500">
-          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+          <Link onClick={() => setIsNavbarVisible(false)} to="/" style={{ textDecoration: 'none', color: 'black' }}>
               <p>მთავარი</p>
             </Link>
-            <Link to="/Courses" style={{ textDecoration: 'none', color: 'black' }}>
+            <Link onClick={() => setIsNavbarVisible(false)} to="/Courses" style={{ textDecoration: 'none', color: 'black' }}>
               <p>კურსები</p>
             </Link>
-            <Link to="/ContactUs" style={{ textDecoration: 'none', color: 'black' }}>
+            <Link onClick={() => setIsNavbarVisible(false)} to="/ContactUs" style={{ textDecoration: 'none', color: 'black' }}>
               <p>კონტაქტი</p>
             </Link>
-            <Link to="/LogIn" style={{ textDecoration: 'none', color: 'black' }}>
+            <Link onClick={() => setIsNavbarVisible(false)} to="/LogIn" style={{ textDecoration: 'none', color: 'black' }}>
               <p>შესვლა</p>
             </Link>
             <p>რეგისტრაცია</p>
