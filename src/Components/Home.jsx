@@ -1,8 +1,7 @@
 // import WhatWeDo from './mainPageItems/WhatWeDo';
 import CourseLinks from './mainPageItems/CourseLinks'
-import Footer from './mainPageItems/Footer';
 import TotalItems from './mainPageItems/TotalItems';
-import StartPage from './mainPageItems/startPage';
+import StartPage from './mainPageItems/StartPage';
 import './CSS/mainpagecss/Navbar.css'
 
 const Home = () => {
