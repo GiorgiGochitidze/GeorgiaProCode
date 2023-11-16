@@ -39,7 +39,9 @@ const Navbar = () => {
             <Link to="/ContactUs" style={{ textDecoration: 'none', color: 'black' }}>
               <p>კონტაქტი</p>
             </Link>
-            <p>შესვლა</p>
+            <Link to="/LogIn" style={{ textDecoration: 'none', color: 'black' }}>
+              <p>შესვლა</p>
+            </Link>
             <p>რეგისტრაცია</p>
           </div>
       </div>
@@ -66,7 +68,9 @@ const Navbar = () => {
           <Link to="/ContactUs" style={{ textDecoration: 'none', color: 'black' }}>
             <p>კონტაქტი</p>
           </Link>
-          <p>შესვლა</p>
+          <Link to="/LogIn" style={{ textDecoration: 'none', color: 'black' }}>
+            <p>შესვლა</p>
+          </Link>
           <p>რეგისტრაცია</p>
         </>
 
