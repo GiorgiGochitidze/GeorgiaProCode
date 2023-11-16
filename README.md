@@ -1,1 +1,1 @@
-Demo Link: https://georgiaprocode.netlify.app/
+Demo Link: https://georgianprocode.netlify.app/
