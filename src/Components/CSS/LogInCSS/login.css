@@ -59,12 +59,10 @@ input:focus{
 .otherlinks{
   width: 100%;
   height: 30px;
-  /* background-color: red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-inline: 10px;
-  font-size: 11.5px;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 10px;
 }

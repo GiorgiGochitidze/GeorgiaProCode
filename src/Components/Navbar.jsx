@@ -42,7 +42,10 @@ const Navbar = () => {
             <Link onClick={() => setIsNavbarVisible(false)} to="/LogIn" style={{ textDecoration: 'none', color: 'black' }}>
               <p>შესვლა</p>
             </Link>
+
+            <Link onClick={() => setIsNavbarVisible(false)} to="/Registration" style={{ textDecoration: 'none', color: 'black' }}>
             <p>რეგისტრაცია</p>
+            </Link>
           </div>
       </div>
       
@@ -71,7 +74,9 @@ const Navbar = () => {
           <Link to="/LogIn" style={{ textDecoration: 'none', color: 'black' }}>
             <p>შესვლა</p>
           </Link>
-          <p>რეგისტრაცია</p>
+          <Link to="/Registration" style={{ textDecoration: 'none', color: 'black' }}>
+            <p>რეგისტრაცია</p>
+            </Link>
         </>
 
       </nav>
