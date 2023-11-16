@@ -1,7 +1,15 @@
 import '../CSS/LogInCSS/login.css'
 import { Link } from 'react-router-dom';
+import React, {useEffect } from 'react';
+
 
 const LogIn = () => {
+
+        useEffect(() => {
+          // Scroll to the top when the component mounts
+          window.scrollTo(0, 0);
+        }, []);
+
     return ( 
         <div className='login-container'>
             <form action="">

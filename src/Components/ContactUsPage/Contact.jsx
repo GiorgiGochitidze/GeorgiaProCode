@@ -1,6 +1,14 @@
 import "../CSS/ContactUsCss/contact.css";
+import React, {useEffect } from 'react';
+
 
 const Contact = () => {
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="contact-form-container">
       <form action="https://formsubmit.co/georgiaprocode@gmail.com" method="POST" className="form">

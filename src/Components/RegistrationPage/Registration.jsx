@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
 import '../CSS/RegisterCSS/Registration.css'
+import React, {useEffect } from 'react';
+
 
 const Registration = () => {
+
+    useEffect(() => {
+        // Scroll to the top when the component mounts
+        window.scrollTo(0, 0);
+      }, []);
+
     return ( 
         <div className='registration-container'>
             <form action="">
