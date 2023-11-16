@@ -35,6 +35,8 @@
     width: 300px;
     border-radius: 0.5rem;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    font-family: 'georgian-font', sans-serif;
+    color: #4F46E5;
   }
   
   .submit {
@@ -72,7 +74,6 @@
     max-width: 300px;
     max-height: 150px;
     min-height: 50px;
-
     background-color: #fff;
     padding: 1rem;
     padding-right: 3rem;
@@ -82,10 +83,15 @@
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     font-family: 'georgian-font', sans-serif;
     border: 1px solid lightgray;
+    color: #4F46E5;
   }
 
   .textarea:focus{
     outline: none;
+  }
+
+  .textarea::placeholder{
+    font-family: 'georgian-font', sans-serif;
   }
 
   .textarea::-webkit-scrollbar {
