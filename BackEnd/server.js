@@ -20,14 +20,14 @@ app.post('/api/register', (req, res) => {
 
   // Check if the user already exists
   if (users.some((user) => user.username === username || user.email === email)) {
-    return res.status(409).json({ error: 'User already exists' });
+    return res.status(409).json({ error: 'ასეთი მომხმარებელი უკვე არსებობს' });
   }
 
   // Save the user to the in-memory array (replace with database logic)
   const newUser = { username, email, password };
   users.push(newUser);
 
-  res.json({ message: 'User registered successfully' });
+  res.json({ message: 'მომხმარებელმა წარმატებულად გაიარა რეგისტრაცია' });
 });
 
 app.post('/api/login', (req, res) => {
@@ -35,17 +35,17 @@ app.post('/api/login', (req, res) => {
 
   // Validate input (add more validation as needed)
   if (!username || !password) {
-    return res.status(400).json({ error: 'Username and password are required' });
+    return res.status(400).json({ error: 'გთხოვთ შეიყვანოთ სახელი და პაროლი' });
   }
 
   // Check if the user exists
   const user = users.find((u) => u.username === username && u.password === password);
 
   if (!user) {
-    return res.status(401).json({ error: 'Invalid credentials' });
+    return res.status(401).json({ error: 'არასწორი მონაცემები' });
   }
 
-  res.json({ message: 'User logged in successfully' });
+  res.json({ message: 'შესვლა წარმატებულად დასრულდა' });
 });
 
 app.listen(PORT, () => {
