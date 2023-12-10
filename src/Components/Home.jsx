@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import StartPage from "./mainPageItems/StartPage";
 import CourseLinks from "./mainPageItems/CourseLinks";
 import WhatWeDo from "./mainPageItems/WhatWeDo";
 import TotalItems from "./mainPageItems/TotalItems";
 import "./CSS/mainpagecss/Navbar.css";
+import CoursesPage from "./CoursesPage/CoursesPage";
 
 const Home = () => {
   const [shown, setShown] = useState(true);
   const [filtering, setFiltering] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const items = [
     { title: "HTML" },
@@ -26,14 +27,10 @@ const Home = () => {
     setFiltering(true);
   };
 
-  const filteredItems = items.filter((item) =>
-    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredItems = items.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  useEffect(() => {
-    // Scroll to the top when the component mounts
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div
@@ -47,7 +44,7 @@ const Home = () => {
     >
       <StartPage items={items} apply={apply} handleIsShown={handleIsShown} />
 
-      {filtering && (
+      {filtering ? (
         <>
           {filteredItems.length > 0 ? (
             <CourseLinks items={filteredItems} />
@@ -57,13 +54,13 @@ const Home = () => {
             </h3>
           )}
         </>
+      ) : (
+        <>
+          {shown && <WhatWeDo />}
+          {shown && <TotalItems />}
+          {shown && <CoursesPage items={items} />}
+        </>
       )}
-
-      {shown && <WhatWeDo />}
-
-      {shown && <TotalItems />}
-
-      {shown && <CourseLinks items={items} />}
     </div>
   );
 };

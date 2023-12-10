@@ -2,7 +2,7 @@ import CourseLinks from '../mainPageItems/CourseLinks'
 import React, {useEffect } from 'react';
 
 
-const CoursesPage = () => {
+const CoursesPage = ({items}) => {
 
     useEffect(() => {
         // Scroll to the top when the component mounts
@@ -10,7 +10,7 @@ const CoursesPage = () => {
       }, []);
 
     return ( 
-        <CourseLinks />
+        <CourseLinks items={items} />
      );
 }
  
