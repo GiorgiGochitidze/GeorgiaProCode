@@ -42,7 +42,7 @@ const Home = () => {
         alignItems: "center",
       }}
     >
-      <StartPage items={items} apply={apply} handleIsShown={handleIsShown} />
+      <StartPage apply={apply} handleIsShown={handleIsShown} />
 
       {filtering ? (
         <>
@@ -57,7 +57,9 @@ const Home = () => {
       ) : (
         <>
           {shown && <WhatWeDo />}
+
           {shown && <TotalItems />}
+
           {shown && <CoursesPage items={items} />}
         </>
       )}
