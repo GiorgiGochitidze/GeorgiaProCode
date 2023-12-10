@@ -8,6 +8,8 @@ import LogIn from './Components/LogInPage/LogIn'
 import Footer from "./Components/mainPageItems/Footer";
 import Registration from "./Components/RegistrationPage/Registration";
 
+
+
 function App() {
 
   return (
