@@ -58,7 +58,7 @@ const Navbar = () => {
         </div>
 
         <button onClick={toggleNavbar} className={`navbar-closeOpen-btn ${isNavbarVisible ? 'open' : 'close'}`}>
-          <img data-aos='fade-bottom' style={{ width: '38px' }} src={buttonImage} alt="" />
+          <img src={buttonImage} alt="" />
         </button>
 
         <>

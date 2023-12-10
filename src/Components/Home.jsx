@@ -4,6 +4,7 @@ import TotalItems from './mainPageItems/TotalItems';
 import StartPage from './mainPageItems/StartPage';
 import './CSS/mainpagecss/Navbar.css'
 import React, {useEffect } from 'react';
+import WhatWeDo from './mainPageItems/WhatWeDo';
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
 
             <StartPage />
 
-            {/* <WhatWeDo /> */}
+            <WhatWeDo />
 
             <TotalItems />
 

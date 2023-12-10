@@ -226,6 +226,7 @@ nav p {
 
    .navbar-closeOpen-btn img{
     box-sizing: border-box;
+    width: 30px;
    }
 
    .navbar-closeOpen-btn{
