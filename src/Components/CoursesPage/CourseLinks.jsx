@@ -1,14 +1,19 @@
-import React from "react";
 import "../CSS/mainpagecss/courselinks.css";
 
-const CourseLinks = ({ items }) => {
+const CourseLinks = () => {
+
+  const items = [
+    {title: 'HTML'},
+    {title: 'CSS'},
+    {title: 'JAVASCRIPT'},
+  ]
 
   return (
     <div className="courseList-container">
       <h3>კურსები:</h3>
       <div className="courses-list">
-        {items.map((item, index) => (
-          <div key={index} className="course-cards">
+        {items.map((item) => (
+          <div key={item.title} className="course-cards">
             <p>{item.title}</p>
             <button className="course-startbtn">კურსის დაწყება</button>
           </div>

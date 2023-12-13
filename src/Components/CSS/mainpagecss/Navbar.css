@@ -137,46 +137,7 @@ nav p {
     gap: 10px;
   }
 
-  .searchbar-container{
-    width: 100%;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-inline: 10px;
-  }
-  .searchBtn{
-    width: 100px;
-    height: 50px;
-    border: unset;
-    cursor: pointer;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background: #6964f7;
-    color: white;
-    font-family: 'georgian-font', sans-serif;
-    transition: all 0.2s ease;
-  }
 
-  .searchBtn:hover{
-    background: #605af7;
-  }
-
-   .searchBar-input{
-    width: 90%;
-    height: 50px;
-    border-radius: 0;
-    border: 1px solid transparent;
-    padding-inline: 20px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    font-family: 'georgian-font', sans-serif;
-    color: #6964f7;
-   }
-
-   .searchBar-input:focus{
-    outline: none;
-   }
 
    .girl-image{
     width: auto;
@@ -280,12 +241,6 @@ nav p {
         width: 100vw;
       }
     }
-
-  @media screen and (max-width: 330px){
-    .searchBar-input{
-      width: 50%;
-    }
-  }
 
   
   @media screen and (max-width: 280px){
