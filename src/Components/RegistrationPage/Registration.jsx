@@ -7,23 +7,6 @@ const Registration = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleRegister = async () => {
-    try {
-      const response = await fetch("http://localhost:3001/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, email, password }),
-      });
-
-      const result = await response.json();
-      console.log(result);
-    } catch (error) {
-      console.error("Error registering user:", error);
-    }
-  };
-
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
@@ -67,7 +50,7 @@ const Registration = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="registration-button" type="submit" onClick={handleRegister}>
+        <button className="registration-button" type="submit" >
           რეგისტრაცია
         </button>
 
