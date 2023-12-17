@@ -5,8 +5,8 @@ const CourseLinks = () => {
   const items = [
     {title: 'HTML'},
     {title: 'CSS'},
-    {title: 'JAVASCRIPT'},
-    {title: 'PYTHON'}
+    {title: 'JAVASCRIPT'}, 
+    {title: 'PYTHON'},
   ]
 
   return (
