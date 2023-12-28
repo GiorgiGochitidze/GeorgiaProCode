@@ -7,6 +7,10 @@ const CourseLinks = () => {
     {title: 'CSS'},
     {title: 'JAVASCRIPT'}, 
     {title: 'PYTHON'},
+    {title: 'RUST'},
+    {title: '.NET'},
+    {title: 'GO'},
+    {title: 'PHP'},
   ]
 
   return (

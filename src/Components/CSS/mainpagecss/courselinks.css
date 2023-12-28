@@ -10,16 +10,18 @@
 
 .courses-list{
     width: 95%;
-    height: 300px;
+    height: auto;
     display: flex;
     margin: auto;
     justify-content: space-evenly;
     align-items: center;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    gap: 20px;
+    gap: 35px;
     text-align: center;
     margin-bottom: 50px;
+    flex-wrap: wrap;
+    padding-block: 50px;
 }
 
 .course-cards{
