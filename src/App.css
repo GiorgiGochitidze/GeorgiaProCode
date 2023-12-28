@@ -10,6 +10,7 @@ body, html{
   src: url('./Components/CSS/Fonts/bpg_extrasquare_mtavruli_2009.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-size: 1.33vw;
 }
 
 *{

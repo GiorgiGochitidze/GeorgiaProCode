@@ -1,251 +1,244 @@
-header{
-    width: 100vw;
-    height: 50px;
-    display: flex;
-    overflow-x: hidden;
-    transition: all 0.3s;
-    background: rgba(105, 100, 247, 0.2);
-    z-index: 2;
-    gap: 30px;
-    position: relative;
+header {
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  overflow-x: hidden;
+  transition: all 0.3s;
+  background: rgba(105, 100, 247, 0.2);
+  z-index: 2;
+  gap: 30px;
+  position: relative;
 }
 
-nav{
-    display: flex;
-    width: 100%;
-    height: 70px;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #E1E1FD;
-    z-index: 2;
+nav {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #e1e1fd;
+  z-index: 2;
 }
 
-nav img{
-    width: 50px;
+nav img {
+  width: 50px;
 }
 
-nav > div{
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    font-family: 'Roboto', sans-serif;
-    color: #6964f7;
+nav > div {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-family: "Roboto", sans-serif;
+  color: #6964f7;
 }
 
 nav p {
-    height: 22px;
-    position: relative; /* Add relative positioning */
-    transition: all 0.2s; /* Increase the transition duration for smoother effect */
-    cursor: pointer;
-    color: #5c5776;
+  height: 22px;
+  position: relative; /* Add relative positioning */
+  transition: all 0.2s; /* Increase the transition duration for smoother effect */
+  cursor: pointer;
+  color: #5c5776;
+}
+
+nav p::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px; /* Set the height of the border-bottom */
+  bottom: 0;
+  left: 0; /* Start from the left */
+  background-color: rgb(17, 17, 173);
+  transition: width 0.2s; /* Animate the width property */
+}
+
+nav p:hover::before {
+  width: 100%; /* Animate the width to 100% */
+}
+
+/* Remove the 'border-bottom' property from 'nav p:hover' */
+
+.navbar-dropmenu-container {
+  width: 100%;
+  height: 700px;
+  /* background-color: red; */
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+}
+
+.navbar-menu-dropbox {
+  width: 350px;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.392);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -150px;
+}
+
+.closebtn-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbar-menu-dropbox p {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-menu-dropbox p:hover {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
+}
+
+.searchAndImage-container {
+  width: 100%;
+  height: auto;
+  background-color: rgba(105, 100, 247, 0.2);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.content-container {
+  width: 700px;
+  height: auto;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #18113c;
+  letter-spacing: 2px;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.girl-image {
+  width: auto;
+}
+
+/* responsive navbar menu styles start */
+
+.navbar-menu-container {
+  width: 70vw;
+  height: 100vh;
+  display: none;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 50px;
+  z-index: 3;
+}
+
+.drop-menu {
+  width: 300px;
+  height: 94%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: unset;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 20px;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.drop-menu p {
+  width: 100%;
+  height: 50px;
+  color: #5c5776;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.drop-menu p:hover {
+  background-color: #605af7;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar-closeOpen-btn img {
+  box-sizing: border-box;
+  width: 30px;
+}
+
+.navbar-closeOpen-btn {
+  width: 40px;
+  height: 40px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: #6964f7;
+  border: unset;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navbar-closeOpen-btn:hover {
+  background-color: #605af7;
+}
+
+/* responsive navbar menu styles end */
+
+@media screen and (max-width: 990px) {
+  .searchAndImage-container {
+    flex-wrap: wrap;
   }
-  
-  nav p::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 2px; /* Set the height of the border-bottom */
-    bottom: 0;
-    left: 0; /* Start from the left */
-    background-color: rgb(17, 17, 173);
-    transition: width 0.2s; /* Animate the width property */
-  }
-  
-  nav p:hover::before {
-    width: 100%; /* Animate the width to 100% */
-  }
-  
-  /* Remove the 'border-bottom' property from 'nav p:hover' */
+}
 
-  .navbar-dropmenu-container{
-    width: 100%;
-    height: 700px;
-    /* background-color: red; */
-    position: fixed;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(5px);
-  }
-
-  .navbar-menu-dropbox{
-    width: 350px;
-    height: auto;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.392);
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -150px;
-  }
-
-  .closebtn-container{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .navbar-menu-dropbox p{
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .navbar-menu-dropbox p:hover{
-    background-color: white;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 10px;
-  }
-
-  .searchAndImage-container{
-    width: 100%;
-    height: auto;
-    background-color: rgba(105, 100, 247, 0.2);
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .content-container{
-    width: 700px;
-    height: auto;
-    /* background-color: yellow; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #18113c;
-    letter-spacing: 2px;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-
-
-   .girl-image{
-    width: auto;
-   }
-
-   /* responsive navbar menu styles start */
-
-   .navbar-menu-container{
+@media screen and (max-width: 880px) {
+  nav p {
     display: none;
-    width: 100%;
-    height: 650px;
-    justify-content: flex-start;
-    align-items: center;
-    position: fixed;
-    top: 50px;
-    z-index: 3;
-   }
-
-   .drop-menu{
-    width: 300px;
-    height: 94%;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: unset;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 20px;
-    z-index: 4;
-    overflow: hidden;
-   }
-
-   .drop-menu p{
-    width: 100%;
-    height: 50px;
-    color: #5c5776;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-   }
-
-   .drop-menu p:hover{
-    background-color: #605af7;
-    color: white;
-    cursor: pointer;
-   }
-
-   .navbar-closeOpen-btn img{
-    box-sizing: border-box;
-    width: 30px;
-   }
-
-   .navbar-closeOpen-btn{
-    width: 40px;
-    height: 40px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: #6964f7;
-    border: unset;
-    padding: 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-   }
-
-   .navbar-closeOpen-btn:hover{
-    background-color: #605af7;
-   }
-   
-
-   /* responsive navbar menu styles end */
-
-  @media screen and (max-width: 990px) {
-      .searchAndImage-container{
-        flex-wrap: wrap;
-      }
-    }
-
-  @media screen and (max-width: 880px){
-    nav p{
-      display: none;
-    }
-
-    nav{
-      gap: 0;
-    }
-
-    .navbar-closeOpen-btn{
-      display: flex;
-    }
-
-    .navbar-menu-container{
-      display: flex;
-    }
-  }
- 
-
-  @media screen and (max-width: 410px) {
-      .girl-image{
-        width: 100vw;
-      }
-    }
-
-  
-  @media screen and (max-width: 280px){
-    .content-container{
-      word-break: break-all;
-    }
   }
 
-  
+  nav {
+    gap: 0;
+  }
+
+  .navbar-closeOpen-btn {
+    display: flex;
+  }
+
+  .navbar-menu-container {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .girl-image {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .content-container {
+    word-break: break-all;
+  }
+}
