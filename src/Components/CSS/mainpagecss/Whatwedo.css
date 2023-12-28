@@ -4,7 +4,7 @@ h3{
 
 .whatwedo-container{
     width: 97%;
-    height: 400px;
+    height: auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -13,6 +13,8 @@ h3{
     gap: 10px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     border-radius: 20px;
+    padding-block: 30px;
+    padding-inline: 20px;
 }
 
 .whatdoing-container{
