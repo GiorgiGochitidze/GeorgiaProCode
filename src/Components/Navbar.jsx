@@ -12,6 +12,7 @@ const Navbar = () => {
 
   useEffect(() => {
     // Change the button image based on the navbar visibility
+    window.scrollTo(0, 0)
     setButtonImage(isNavbarVisible ? closeimg : menu);
   }, [isNavbarVisible]);
 

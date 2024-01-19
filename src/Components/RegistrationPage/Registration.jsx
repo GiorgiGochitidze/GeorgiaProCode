@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const Registration = () => {
   const [username, setUsername] = useState("");
-  // const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   useEffect(() => {
