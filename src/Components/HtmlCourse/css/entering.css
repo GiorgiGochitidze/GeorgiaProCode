@@ -1,0 +1,24 @@
+.entering-container{
+    width: 100%;
+    height: 367px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.entering-container button{
+    width: 200px;
+    height: 40px;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+
+.entering-container button:hover{
+    background-color: lawngreen;
+    box-shadow: 0 6px 18px lawngreen;
+    color: white;
+}
