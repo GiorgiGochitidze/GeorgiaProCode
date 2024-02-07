@@ -9,6 +9,7 @@ import Footer from "./Components/mainPageItems/Footer";
 import Registration from "./Components/RegistrationPage/Registration";
 import Entering from "./Components/HtmlCourse/Entering";
 import CodePlayGround from "./Components/CodePlayGround";
+import Course1 from "./Components/HtmlCourse/Course1";
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/Registration" element={<Registration />} />
         <Route path="/Html" element={<Entering />} />
         <Route path="/Ground" element={<CodePlayGround />} />
+        <Route path="/Course1" element={<Course1 />} />
       </Routes>
 
       <Footer />

@@ -1,11 +1,13 @@
 .entering-container{
     width: 100%;
-    height: 367px;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 20px;
+    margin-block: 20px;
+    padding-inline: 20px;
 }
 
 .entering-container button{
@@ -15,6 +17,7 @@
     border-radius: 20px;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .entering-container button:hover{
