@@ -4,8 +4,9 @@ import React, { useState, useEffect } from 'react';
 
 const LogIn = () => {
   const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
-
+  
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
@@ -34,6 +35,8 @@ const LogIn = () => {
           type="email"
           id='მეილი'
           name='მეილი'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <label htmlFor="პაროლი">პაროლი:</label>
