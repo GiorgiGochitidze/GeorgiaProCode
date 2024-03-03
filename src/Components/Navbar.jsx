@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './CSS/mainpagecss/Navbar.css';
-import menu from '../assets/menu.png';
-import closeimg from '../assets/closeimg.png';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./CSS/mainpagecss/Navbar.css";
+import menu from "../assets/menu.png";
+import closeimg from "../assets/closeimg.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [buttonImage, setButtonImage] = useState(menu);
+  const location = useLocation();
 
   useEffect(() => {
-    // Change the button image based on the navbar visibility
-    window.scrollTo(0, 0)
     setButtonImage(isNavbarVisible ? closeimg : menu);
   }, [isNavbarVisible]);
 
@@ -20,66 +19,81 @@ const Navbar = () => {
     setIsNavbarVisible(!isNavbarVisible);
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, [isNavbarVisible]);
 
-    useEffect(() => {
-      AOS.init();
-    }, [isNavbarVisible]);
+  useEffect(() => {
+    // Smooth scroll to the top whenever the route changes
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, [location.pathname]);
 
   return (
     <header>
-            {isNavbarVisible && 
-      
-      <div className="navbar-menu-container">
-        <div className='drop-menu' data-aos="fade-right" data-aos-duration="500">
-          <Link onClick={() => setIsNavbarVisible(false)} to="/" style={{ textDecoration: 'none', color: 'black' }}>
+      {isNavbarVisible && (
+        <div className="navbar-menu-container">
+          <div
+            className="drop-menu"
+            data-aos="fade-right"
+            data-aos-duration="500"
+          >
+            <Link
+              onClick={() => setIsNavbarVisible(false)}
+              to="/"
+              style={{ textDecoration: "none", color: "black" }}
+            >
               <p>მთავარი</p>
             </Link>
-            <Link onClick={() => setIsNavbarVisible(false)} to="/Courses" style={{ textDecoration: 'none', color: 'black' }}>
+            <Link
+              onClick={() => setIsNavbarVisible(false)}
+              to="/Courses"
+              style={{ textDecoration: "none", color: "black" }}
+            >
               <p>კურსები</p>
             </Link>
-            <Link onClick={() => setIsNavbarVisible(false)} to="/ContactUs" style={{ textDecoration: 'none', color: 'black' }}>
+            <Link
+              onClick={() => setIsNavbarVisible(false)}
+              to="/ContactUs"
+              style={{ textDecoration: "none", color: "black" }}
+            >
               <p>კონტაქტი</p>
             </Link>
-            <Link onClick={() => setIsNavbarVisible(false)} to="/LogIn" style={{ textDecoration: 'none', color: 'black' }}>
-              <p>შესვლა</p>
-            </Link>
-
-            <Link onClick={() => setIsNavbarVisible(false)} to="/Registration" style={{ textDecoration: 'none', color: 'black' }}>
-            <p>რეგისტრაცია</p>
-            </Link>
           </div>
-      </div>
-      
-      }
+        </div>
+      )}
       <nav>
-
         <div>
           <img src="/logo.png" alt="our command logo" />
           <h3>GeorgiaProCode</h3>
-
-        <button onClick={toggleNavbar} className={`navbar-closeOpen-btn ${isNavbarVisible ? 'open' : 'close'}`}>
-          <img src={buttonImage} alt="" />
-        </button>
+          <button
+            onClick={toggleNavbar}
+            className={`navbar-closeOpen-btn ${
+              isNavbarVisible ? "open" : "close"
+            }`}
+          >
+            <img src={buttonImage} alt="" />
+          </button>
         </div>
-
         <>
-          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
             <p>მთავარი</p>
           </Link>
-          <Link to="/Courses" style={{ textDecoration: 'none', color: 'black' }}>
+          <Link
+            to="/Courses"
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <p>კურსები</p>
           </Link>
-          <Link to="/ContactUs" style={{ textDecoration: 'none', color: 'black' }}>
+          <Link
+            to="/ContactUs"
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <p>კონტაქტი</p>
           </Link>
-          <Link to="/LogIn" style={{ textDecoration: 'none', color: 'black' }}>
-            <p>შესვლა</p>
-          </Link>
-          <Link to="/Registration" style={{ textDecoration: 'none', color: 'black' }}>
-            <p>რეგისტრაცია</p>
-            </Link>
         </>
-
       </nav>
     </header>
   );

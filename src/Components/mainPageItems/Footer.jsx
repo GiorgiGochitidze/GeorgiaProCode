@@ -39,7 +39,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <i className='sponsor'>Made By VIOR Community</i>
+        {/* <i className='sponsor'>Made By VIOR Community</i> */}
    </footer>
      );
 }

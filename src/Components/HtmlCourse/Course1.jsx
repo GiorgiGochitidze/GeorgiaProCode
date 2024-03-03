@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Course1 = () => {
   return (
     <div className="entering-container">
@@ -44,6 +46,8 @@ const Course1 = () => {
         ტექსტი, სურათები, ვიდეო და სხვა ელემენტები. ეს არის ვებგვერდის
         თვალსაჩინო ნაწილი, რომელთანაც მომხმარებლები ურთიერთობენ.
       </p>
+
+      <Link to='/Course2'><button>გაკვეთილი N2</button></Link>
     </div>
   );
 };

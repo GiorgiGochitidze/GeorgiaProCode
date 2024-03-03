@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
 const Registration = () => {
-  const [username, setUsername] = useState("");
+  const [userName, setUserName] = useState("");
   const [surName, setSurName] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -18,16 +18,16 @@ const Registration = () => {
   }, []);
 
   const sendData = () => {
-    if (!username || !surName || !password) {
+    if (!userName || !surName || !password) {
       setErrorMessage("გთხოვთ შეავსოთ ყველა ველი");
       return;
     }
 
-    axios.post('http://localhost:5000/api/register', { username, surName, password })
+    axios.post('http://localhost:5000/api/register', { userName, surName, password })
       .then(response => {
         console.log(response.data); // Log response from the server
         // Clear input fields
-        setUsername("");
+        setUserName("");
         setSurName("");
         setPassword("");
         // Display success message
@@ -52,8 +52,8 @@ const Registration = () => {
 
         <label htmlFor="სახელი">სახელი:</label>
         <input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
           required
           placeholder="სახელი"
           type="text"
