@@ -11,6 +11,7 @@ import Entering from "./Components/HtmlCourse/Entering";
 import CodePlayGround from "./Components/CodePlayGround";
 import Course1 from "./Components/HtmlCourse/Course1";
 import Course2 from "./Components/HtmlCourse/Course2";
+import Course3 from "./Components/HtmlCourse/Course3";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Ground" element={<CodePlayGround />} />
           <Route path="/Course1" element={<Course1 />} />
           <Route path="/Course2" element={<Course2 />} />
+          <Route path="/Course3" element={<Course3 />} />
         </Routes>
         <Footer />
       </>

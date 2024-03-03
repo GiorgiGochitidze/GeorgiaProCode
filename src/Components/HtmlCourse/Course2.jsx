@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import CodePlayGround from '../CodePlayGround';
 import './css/entering.css'
 
@@ -25,6 +26,7 @@ const Course2 = () => {
 
             <CodePlayGround src="https://codesandbox.io/embed/9hsntp?view=Editor+%2B+Preview&module=%2Findex.html" />
             
+            <Link to='/Course3'><button>გაკვეთილი N3</button></Link>
         </div>
      );
 }
