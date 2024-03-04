@@ -3,12 +3,8 @@ import CourseLinks from "./CoursesPage/CourseLinks";
 import WhatWeDo from "./mainPageItems/WhatWeDo";
 import TotalItems from "./mainPageItems/TotalItems";
 import "./CSS/mainpagecss/Navbar.css";
-import { useEffect } from "react";
 
 const Home = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
 
   return (
     <div

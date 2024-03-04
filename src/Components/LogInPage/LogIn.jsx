@@ -1,6 +1,6 @@
 import "../CSS/LogInCSS/login.css";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios"; // Import Axios for making HTTP requests
 
 const LogIn = () => {
@@ -10,10 +10,6 @@ const LogIn = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate(); // Hook from React Router for navigation
 
-  useEffect(() => {
-    // Scroll to the top when the component mounts
-    window.scrollTo(0, 0);
-  }, []);
   
   const handleSubmit = async (e) => {
     if (!userName || !surName || !password) {

@@ -1,15 +1,9 @@
 import { useNavigate } from 'react-router-dom';
-import React, { useEffect } from 'react';
 import '../CSS/mainpagecss/courselinks.css'
 
 
 const CourseLinks = () => {
   const navigate = useNavigate(); // Access the navigate function
-
-  useEffect(() => {
-    // Scroll to the top when the component mounts
-    window.scrollTo(0, 0);
-  }, []);
 
   const items = [
     { title: 'HTML', path: '/Html' },

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../CSS/RegisterCSS/Registration.css";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
 
@@ -11,11 +11,6 @@ const Registration = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState(""); // State for success message
   const navigate = useNavigate(); // Use useNavigate hook
-
-  useEffect(() => {
-    // Scroll to the top when the component mounts
-    window.scrollTo(0, 0);
-  }, []);
 
   const sendData = () => {
     if (!userName || !surName || !password) {

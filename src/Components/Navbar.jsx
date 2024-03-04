@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./CSS/mainpagecss/Navbar.css";
 import menu from "../assets/menu.png";
 import closeimg from "../assets/closeimg.png";
@@ -9,7 +9,6 @@ import "aos/dist/aos.css";
 const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [buttonImage, setButtonImage] = useState(menu);
-  const location = useLocation();
 
   useEffect(() => {
     setButtonImage(isNavbarVisible ? closeimg : menu);
@@ -22,14 +21,6 @@ const Navbar = () => {
   useEffect(() => {
     AOS.init();
   }, [isNavbarVisible]);
-
-  useEffect(() => {
-    // Smooth scroll to the top whenever the route changes
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  }, [location.pathname]);
 
   return (
     <header>
@@ -45,21 +36,42 @@ const Navbar = () => {
               to="/"
               style={{ textDecoration: "none", color: "black" }}
             >
-              <p>მთავარი</p>
+              <p
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                მთავარი
+              </p>
             </Link>
             <Link
-              onClick={() => setIsNavbarVisible(false)}
+              onClick={() => {
+                setIsNavbarVisible(false);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
               to="/Courses"
               style={{ textDecoration: "none", color: "black" }}
             >
-              <p>კურსები</p>
+              <p
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                კურსები
+              </p>
             </Link>
             <Link
               onClick={() => setIsNavbarVisible(false)}
               to="/ContactUs"
               style={{ textDecoration: "none", color: "black" }}
             >
-              <p>კონტაქტი</p>
+              <p
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                კონტაქტი
+              </p>
             </Link>
           </div>
         </div>
@@ -79,19 +91,37 @@ const Navbar = () => {
         </div>
         <>
           <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-            <p>მთავარი</p>
+            <p
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              მთავარი
+            </p>
           </Link>
           <Link
             to="/Courses"
             style={{ textDecoration: "none", color: "black" }}
           >
-            <p>კურსები</p>
+            <p
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              კურსები
+            </p>
           </Link>
           <Link
             to="/ContactUs"
             style={{ textDecoration: "none", color: "black" }}
           >
-            <p>კონტაქტი</p>
+            <p
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
+              კონტაქტი
+            </p>
           </Link>
         </>
       </nav>

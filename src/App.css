@@ -1,8 +1,9 @@
-body, html{
-  overflow-x: hidden;
+body{
   height: 100vh;
-  margin: 0;
-  padding: 0;
+}
+
+html{
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -11,6 +12,7 @@ body, html{
   font-weight: normal;
   font-style: normal;
   font-size: 1.33vw;
+  font-display: fallback;
 }
 
 *{
