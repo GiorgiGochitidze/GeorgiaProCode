@@ -21,7 +21,8 @@
 }
 
 .entering-container button:hover{
-    background-color: lawngreen;
-    box-shadow: 0 6px 18px lawngreen;
+    background-color: #23c483;
+    box-shadow: 0 6px 18px #2ee59d66;
     color: white;
+    transform: translateY(7px);
 }
