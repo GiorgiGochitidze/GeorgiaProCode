@@ -11,6 +11,7 @@ import CodePlayGround from './Components/CodePlayGround';
 import Course1 from './Components/HtmlCourse/Course1';
 import Course2 from './Components/HtmlCourse/Course2';
 import Course3 from './Components/HtmlCourse/Course3';
+import TechnicalWorks from './Components/TechnicalWorks';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/Courses" element={<CoursesPage />} />
           <Route path="/Html" element={<Entering />} />
           <Route path="/Ground" element={<CodePlayGround />} />
+          <Route path="/TechnicalWorks" element={<TechnicalWorks />} />
           <Route path="/Course1" element={<Course1 />} />
           <Route path="/Course2" element={<Course2 />} />
           <Route path="/Course3" element={<Course3 />} />

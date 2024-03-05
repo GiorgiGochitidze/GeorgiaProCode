@@ -7,13 +7,13 @@ const CourseLinks = () => {
 
   const items = [
     { title: 'HTML', path: '/Html' },
-    { title: 'CSS', path: '/css' },
-    { title: 'JAVASCRIPT', path: '/javascript' },
-    { title: 'PYTHON', path: '/python' },
-    { title: 'RUST', path: '/rust' },
-    { title: '.NET', path: '/dotnet' },
-    { title: 'GO', path: '/go' },
-    { title: 'PHP', path: '/php' },
+    { title: 'CSS', path: '/TechnicalWorks' },
+    { title: 'JAVASCRIPT', path: '/Technicalworks' },
+    { title: 'PYTHON', path: '/TechnicalWorks' },
+    { title: 'RUST', path: '/TechnicalWorks' },
+    { title: '.NET', path: '/TechnicalWorks' },
+    { title: 'GO', path: '/TechnicalWorks' },
+    { title: 'PHP', path: '/TechnicalWorks' },
   ];
 
   // Function to handle button click and navigate to the HTML course
