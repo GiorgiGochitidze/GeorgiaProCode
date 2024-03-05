@@ -47,7 +47,7 @@ const Course1 = () => {
         თვალსაჩინო ნაწილი, რომელთანაც მომხმარებლები ურთიერთობენ.
       </p>
 
-      <Link to='/Course2'><button>გაკვეთილი N2</button></Link>
+      <Link to='/Html/Course2'><button>გაკვეთილი N2</button></Link>
     </div>
   );
 };

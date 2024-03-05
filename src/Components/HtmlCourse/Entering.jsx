@@ -15,7 +15,7 @@ const Entering = () => {
       მაგალითად: ღილაკები, ტექსტები, ნავიგაციის მენიუ,<br /> შესვლა და რეგისტრაციის ფორმები და ა.შ. <br />
       </p>
 
-      <Link to="/Course1" style={{ textDecoration: 'none', color: 'black' }}><button>გაკვეთილი N1</button></Link>
+      <Link to="/Html/Course1" style={{ textDecoration: 'none', color: 'black' }}><button>გაკვეთილი N1</button></Link>
     </div>
   );
 };

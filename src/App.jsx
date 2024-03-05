@@ -25,9 +25,9 @@ function App() {
           <Route path="/Html" element={<Entering />} />
           <Route path="/Ground" element={<CodePlayGround />} />
           <Route path="/TechnicalWorks" element={<TechnicalWorks />} />
-          <Route path="/Course1" element={<Course1 />} />
-          <Route path="/Course2" element={<Course2 />} />
-          <Route path="/Course3" element={<Course3 />} />
+          <Route path="/Html/Course1" element={<Course1 />} />
+          <Route path="/Html/Course2" element={<Course2 />} />
+          <Route path="/Html/Course3" element={<Course3 />} />
         </Routes>
         <Footer />
       </>
