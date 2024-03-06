@@ -12,6 +12,8 @@ import Course1 from './Components/HtmlCourse/Course1';
 import Course2 from './Components/HtmlCourse/Course2';
 import Course3 from './Components/HtmlCourse/Course3';
 import TechnicalWorks from './Components/TechnicalWorks';
+import Course4 from './Components/HtmlCourse/Course4';
+import Course5 from './Components/HtmlCourse/Course5';
 
 function App() {
 
@@ -28,6 +30,8 @@ function App() {
           <Route path="/Html/Course1" element={<Course1 />} />
           <Route path="/Html/Course2" element={<Course2 />} />
           <Route path="/Html/Course3" element={<Course3 />} />
+          <Route path="/Html/Course4" element={<Course4 />} />
+          <Route path="/Html/Course5" element={<Course5 />} />
         </Routes>
         <Footer />
       </>

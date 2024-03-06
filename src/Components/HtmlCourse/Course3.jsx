@@ -88,7 +88,7 @@ const Course3 = () => {
 
       <CodePlayGround src="https://codesandbox.io/embed/84ddyh?view=Editor+%2B+Preview&module=%2Findex.html" />
 
-      <Link to='/TechnicalWorks'><button>გაკვეთილი N4</button></Link>
+      <Link to='/Html/Course4'><button>გაკვეთილი N4</button></Link>
     </div>
   );
 };
