@@ -112,6 +112,19 @@ app.post("/login", (req, res) => {
   });
 });
 
+app.post('/loadUsersList', async (req, res) => {
+  try {
+    const usersList = await User.find({});
+    const usernames = usersList.map(user => user.userName);
+
+    res.status(200).json(usernames);
+  } catch (err) {
+    res.status(500).send('Something went wrong when loading users');
+    console.log('Something went wrong when loading users', err);
+  }
+});
+
+
 app.get("/", (req, res) => {
   res.send("Hello World");
 });

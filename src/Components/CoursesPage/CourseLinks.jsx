@@ -1,20 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import '../CSS/mainpagecss/courselinks.css'
+import items from './ItemsArray';
 
 
 const CourseLinks = () => {
   const navigate = useNavigate(); // Access the navigate function
-
-  const items = [
-    { title: 'HTML', path: '/Html' },
-    { title: 'CSS', path: '/TechnicalWorks' },
-    { title: 'JAVASCRIPT', path: '/Technicalworks' },
-    { title: 'PYTHON', path: '/TechnicalWorks' },
-    { title: 'RUST', path: '/TechnicalWorks' },
-    { title: '.NET', path: '/TechnicalWorks' },
-    { title: 'GO', path: '/TechnicalWorks' },
-    { title: 'PHP', path: '/TechnicalWorks' },
-  ];
 
   // Function to handle button click and navigate to the HTML course
   const handleButtonClick = (path) => {

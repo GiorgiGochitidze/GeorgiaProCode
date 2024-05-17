@@ -219,7 +219,7 @@ nav p:hover {
 .profile-list{
   position: absolute;
   width: 300px;
-  height: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;

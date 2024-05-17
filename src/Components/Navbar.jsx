@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./CSS/mainpagecss/Navbar.css";
 import menu from "../assets/menu.png";
 import closeimg from "../assets/closeimg.png";
@@ -17,6 +17,7 @@ const Navbar = () => {
   const [buttonImage, setButtonImage] = useState(menu);
   const [profile, setProfile] = useState(false);
   const profileRef = useRef(null);
+  const navigate = useNavigate()
 
   useEffect(() => {
     setButtonImage(isNavbarVisible ? closeimg : menu);
@@ -26,11 +27,16 @@ const Navbar = () => {
     setIsNavbarVisible(!isNavbarVisible);
   };
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('token')
+    navigate('/')
+    window.location.reload()
+  }
+
   useEffect(() => {
     AOS.init();
   }, [isNavbarVisible]);
 
-  // Handle click outside of profile container
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (profileRef.current && !profileRef.current.contains(event.target)) {
@@ -136,6 +142,9 @@ const Navbar = () => {
                 </Link>
               </>
             )}
+            {token && <p onClick={handleLogout}>
+              გასვლა
+            </p>}
           </div>
         </div>
       )}
@@ -231,7 +240,7 @@ const Navbar = () => {
                   animate={{
                     opacity: 1,
                     width: "300px",
-                    height: "250px",
+                    height: "300px",
                   }}
                   transition={{
                     type: "spring",
@@ -326,6 +335,17 @@ const Navbar = () => {
                     transition={{ delay: 0.7 }}
                   >
                     პარამეტრები
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{ delay: 0.8 }}
+                    onClick={handleLogout}
+                  >
+                    გასვლა
                   </motion.p>
                 </motion.div>
               )}
