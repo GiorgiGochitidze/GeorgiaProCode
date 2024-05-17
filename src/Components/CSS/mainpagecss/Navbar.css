@@ -40,32 +40,18 @@ nav > div {
 
 nav p {
   height: 22px;
-  position: relative; /* Add relative positioning */
   transition: all 0.2s; /* Increase the transition duration for smoother effect */
-  cursor: pointer;
   color: #5c5776;
 }
 
-nav p::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px; /* Set the height of the border-bottom */
-  bottom: 0;
-  left: 0; /* Start from the left */
-  background-color: rgb(17, 17, 173);
-  transition: width 0.2s; /* Animate the width property */
+nav p:hover {
+  cursor: pointer;
+  color: #6964f7;
 }
 
-nav p:hover::before {
-  width: 100%; /* Animate the width to 100% */
-}
-
-/* Remove the 'border-bottom' property from 'nav p:hover' */
-
-.navbar-dropmenu-container {
+.navbar-menu-container {
   width: 100%;
-  height: 700px;
+  height: 100vh;
   /* background-color: red; */
   position: fixed;
   z-index: 1;
@@ -140,30 +126,18 @@ nav p:hover::before {
   width: auto;
 }
 
-/* responsive navbar menu styles start */
-
-.navbar-menu-container {
-  width: 70vw;
-  height: 100vh;
-  display: none;
-  justify-content: flex-start;
-  align-items: center;
-  position: fixed;
-  top: 50px;
-  z-index: 3;
-}
-
 .drop-menu {
   width: 300px;
-  height: 94%;
+  height: auto;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   background-color: white;
   border: unset;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
   z-index: 4;
   overflow: hidden;
+  margin-inline: 15px;
 }
 
 .drop-menu p {
@@ -174,6 +148,7 @@ nav p:hover::before {
   justify-content: center;
   text-align: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .drop-menu p:hover {
@@ -203,6 +178,78 @@ nav p:hover::before {
 
 .navbar-closeOpen-btn:hover {
   background-color: #605af7;
+}
+
+.logout-btn{
+  min-width: 100px;
+  height: 30px;
+  box-sizing: unset;
+  border: 0;
+  border-radius: 10px;
+  background-color: rgb(0, 255, 85);
+  color: white;
+  transition: 0.2s all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.logout-btn:hover{
+  cursor: pointer;
+  background-color: rgb(0, 255, 123);
+}
+
+.profile-container{
+  width: 50px;
+  background-color: #605af7;
+  border-radius: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.profile-container:hover{
+  cursor: pointer;
+}
+
+.profile-list{
+  position: absolute;
+  width: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 20px;
+  top: 80px;
+  right: 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.profile-list p{
+  height: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-links{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.profile-links:hover{
+  color: #605af7;
 }
 
 /* responsive navbar menu styles end */

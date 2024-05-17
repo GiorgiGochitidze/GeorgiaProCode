@@ -1,0 +1,71 @@
+.registration-container {
+  width: 100%;
+  height: auto;
+  margin-block: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.auth-form {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  gap: 20px;
+}
+
+.auth-form label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.auth-form label input {
+  width: 90%;
+  height: 38px;
+  border: 0;
+  border-bottom: 2px solid rgb(105, 100, 247);
+  padding-inline: 10px;
+}
+
+.auth-form label input:focus {
+  outline: none;
+}
+
+.submit-btn {
+  width: 200px;
+  height: 38px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(105, 100, 247);
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 460px){
+  .auth-form{
+    width: 90%;
+  }
+
+  .auth-form p{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 255px){
+  .submit-btn{
+    width: 90%;
+  }
+}

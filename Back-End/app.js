@@ -1,96 +1,115 @@
 const express = require("express");
 const app = express();
-const fs = require("fs");
 const PORT = 5000;
-const cors = require('cors');
-const crypto = require("crypto");
+const cors = require("cors");
 const jwt = require("jsonwebtoken"); // Import JWT module
 const bcrypt = require("bcrypt"); // Import bcrypt for password hashing
+const User = require("./User.js");
+const mongoose = require("mongoose");
 
 app.use(cors());
 app.use(express.json());
 
+mongoose
+  .connect("mongodb://localhost:27017/GeorgianProCode")
+  .then(() => {
+    console.log("Succesfully Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.log("error with mongodb connection", err);
+  });
 
-const generateSecretKey = () => {
-  return crypto.randomBytes(64).toString("hex");
-};
-
-console.log(generateSecretKey());
-
-const SECRET_KEY = generateSecretKey();
-
-
-
-// Function to generate JWT token
-const generateToken = (user) => {
-  return jwt.sign({ id: user.id }, SECRET_KEY, { expiresIn: "1h" }); // Token expires in 1 hour
-};
-
-app.post("/api/register", async (req, res) => {
-  const { userName, surName, password } = req.body;
-
-  try {
-    // Read the existing data from the file
-    const data = fs.readFileSync("registeredUsers.json", "utf8");
-    let users = [];
-    if (data) {
-      // Parse the existing JSON data
-      users = JSON.parse(data);
-    }
-
-    // Check if the user with the same username already exists
-    const existingUser = users.find(user => user.userName === userName);
-    if (existingUser) {
-      return res.status(400).send("User with the same username already exists");
-    }
-
-    // Hash the password before storing
-    const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Add a new user to the array
-    const newUser = { id: users.length + 1, userName, surName, password: hashedPassword };
-    users.push(newUser);
-
-    // Write the updated data back to the file
-    fs.writeFileSync("registeredUsers.json", JSON.stringify(users, null, 2));
-
-    // Generate JWT token
-    const token = generateToken(newUser);
-
-    res.json({ token }); // Return token to the client
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Internal Server Error");
+const generateRandomString = (length) => {
+  const charset =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_";
+  let randomString = "";
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    randomString += charset[randomIndex];
   }
+  return randomString;
+};
+
+const secretKey = generateRandomString(64);
+
+const generateToken = (user) => {
+  return jwt.sign(
+    { userName: user.userName, userType: user.userType },
+    secretKey
+  );
+};
+
+app.post("/register", (req, res) => {
+  const { userName, gmail, password } = req.body;
+  console.log({ userName, gmail, password });
+
+  User.findOne({ $or: [{ userName }, { gmail }] }).then((exitingUser) => {
+    if (exitingUser) {
+      return res.status(400).send("ასეთი მომხმარებელი უკვე არსებობს");
+    }
+
+    bcrypt.hash(password, 10, (err, hash) => {
+      if (err) {
+        console.error("Error hashing password:", err);
+        return res.status(500).send("Internal Server Error");
+      }
+
+      const newUser = new User({
+        userName,
+        gmail,
+        password: hash,
+        userType: "student",
+      });
+
+      newUser
+        .save()
+        .then(() => {
+          console.log("მომხმარებელი დარეგისტრირდა წარმატებით");
+          res.status(200).send("მომხმარებელი დარეგისტრირდა წარმატებით");
+        })
+        .catch((err) => {
+          console.error("Error registering user:", err);
+          res.status(500).send("Internal Server Error");
+        });
+    });
+  });
 });
 
-app.post("/api/login", async (req, res) => {
-  const { userName, surName, password } = req.body;
+app.post("/login", (req, res) => {
+  const { userName, gmail, password } = req.body;
 
-  try {
-    // Read the existing data from the file
-    const data = fs.readFileSync("registeredUsers.json", "utf8");
-    const users = JSON.parse(data);
-
-    // Find the user by username
-    const user = users.find(user => user.userName === userName && user.surName === surName);
+  User.findOne({ userName, gmail }).then((user) => {
     if (!user) {
-      return res.status(404).send("User not found");
+      return res
+        .status(404)
+        .json({ error: "User not found", message: "User Not Found" });
     }
-
-    // Compare hashed password
-    const match = await bcrypt.compare(password, user.password);
-    if (match) {
-      // Generate JWT token
-      const token = generateToken(user);
-      res.json({ token }); // Return token to the client
-    } else {
-      res.status(401).send("Incorrect password");
-    }
-  } catch (error) {
-    console.error(error);
-    res.status(500).send("Internal Server Error");
-  }
+    bcrypt
+      .compare(password, user.password)
+      .then((isMatch) => {
+        if (isMatch) {
+          const token = generateToken({
+            userName: user.userName,
+            userType: user.userType,
+          });
+          res
+            .status(200)
+            .json({ message: "შესვლა წარმატებით დასრულდა", token });
+        } else {
+          return res.status(401).json({ message: "პაროლი არასწორია" });
+        }
+      })
+      .catch((err) => {
+        // Error occurred while comparing passwords
+        console.error("Error comparing passwords:", err);
+        res.status(500).json({ error: "Internal Server Error" });
+      })
+      .catch((err) => {
+        // Error occurred while finding the user
+        console.error("Error finding user:", err);
+        res.status(500).json({ error: "Internal Server Error" });
+      });
+  });
 });
 
 app.get("/", (req, res) => {
