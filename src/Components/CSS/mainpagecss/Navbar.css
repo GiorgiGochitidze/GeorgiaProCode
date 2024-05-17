@@ -5,7 +5,7 @@ header {
   overflow-x: hidden;
   transition: all 0.3s;
   background: rgba(105, 100, 247, 0.2);
-  z-index: 2;
+  z-index: 10;
   gap: 30px;
   position: relative;
 }
@@ -219,7 +219,7 @@ nav p:hover {
 .profile-list{
   position: absolute;
   width: 300px;
-  height: auto;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -239,6 +239,7 @@ nav p:hover {
   justify-content: center;
   align-items: center;
 }
+
 
 .profile-links{
   width: 100%;
@@ -276,6 +277,10 @@ nav p:hover {
 
   .navbar-menu-container {
     display: flex;
+  }
+
+  .profile-container{
+    display: none;
   }
 }
 

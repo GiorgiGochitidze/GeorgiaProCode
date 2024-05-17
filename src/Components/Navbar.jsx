@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./CSS/mainpagecss/Navbar.css";
 import menu from "../assets/menu.png";
@@ -6,7 +6,6 @@ import closeimg from "../assets/closeimg.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { jwtDecode } from "jwt-decode";
-import { IoIosLogOut } from "react-icons/io";
 import { FaRegUser } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -17,6 +16,7 @@ const Navbar = () => {
   const [isNavbarVisible, setIsNavbarVisible] = useState(false);
   const [buttonImage, setButtonImage] = useState(menu);
   const [profile, setProfile] = useState(false);
+  const profileRef = useRef(null);
 
   useEffect(() => {
     setButtonImage(isNavbarVisible ? closeimg : menu);
@@ -30,6 +30,20 @@ const Navbar = () => {
     AOS.init();
   }, [isNavbarVisible]);
 
+  // Handle click outside of profile container
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setProfile(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <header>
       {isNavbarVisible && (
@@ -39,6 +53,13 @@ const Navbar = () => {
             data-aos="fade-right"
             data-aos-duration="500"
           >
+            {token && (
+              <>
+                <p>გამარჯობა, {decoded.userName}</p>
+                <p onClick={() => setIsNavbarVisible(false)}>პროფილი</p>
+              </>
+            )}
+
             <Link
               onClick={() => setIsNavbarVisible(false)}
               to="/"
@@ -82,6 +103,10 @@ const Navbar = () => {
               </p>
             </Link>
 
+            {token && (
+              <p onClick={() => setIsNavbarVisible(false)}>პარამეტრები</p>
+            )}
+
             {!token && (
               <>
                 <Link
@@ -109,16 +134,6 @@ const Navbar = () => {
                     შესვლა
                   </p>
                 </Link>
-              </>
-            )}
-
-            {token && (
-              <>
-                <p>გამარჯობა, {decoded.userName}</p>
-                <button className="logout-btn">
-                  <IoIosLogOut size={25} color="white" />
-                  {/* გასვლა */}
-                </button>
               </>
             )}
           </div>
@@ -204,7 +219,8 @@ const Navbar = () => {
 
           {token && (
             <div
-              onClick={() => (profile ? setProfile(false) : setProfile(true))}
+              onClick={() => setProfile(!profile)}
+              ref={profileRef}
               className="profile-container"
             >
               <FaRegUser size={25} color="white" />
@@ -215,7 +231,7 @@ const Navbar = () => {
                   animate={{
                     opacity: 1,
                     width: "300px",
-                    height: "auto",
+                    height: "250px",
                   }}
                   transition={{
                     type: "spring",
@@ -234,6 +250,16 @@ const Navbar = () => {
                   >
                     გამარჯობა, {decoded.userName}
                   </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    პროფილი
+                  </motion.p>
                   <Link
                     className="profile-links"
                     to="/"
@@ -245,7 +271,7 @@ const Navbar = () => {
                         opacity: 1,
                         y: 0,
                       }}
-                      transition={{ delay: 0.3 }}
+                      transition={{ delay: 0.4 }}
                       onClick={() => {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
@@ -264,7 +290,7 @@ const Navbar = () => {
                         opacity: 1,
                         y: 0,
                       }}
-                      transition={{ delay: 0.4 }}
+                      transition={{ delay: 0.5 }}
                       onClick={() => {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
@@ -283,7 +309,7 @@ const Navbar = () => {
                         opacity: 1,
                         y: 0,
                       }}
-                      transition={{ delay: 0.5 }}
+                      transition={{ delay: 0.6 }}
                       onClick={() => {
                         window.scrollTo({ top: 0, behavior: "smooth" });
                       }}
@@ -300,16 +326,6 @@ const Navbar = () => {
                     transition={{ delay: 0.7 }}
                   >
                     პარამეტრები
-                  </motion.p>
-                  <motion.p
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    transition={{ delay: 0.8 }}
-                  >
-                    ჩემი კურსები
                   </motion.p>
                 </motion.div>
               )}

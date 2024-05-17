@@ -1,0 +1,39 @@
+.courseslist-container{
+    width: 100%;
+    min-height: 155px;
+    height: auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-block: 30px;
+    flex-direction: column;
+}
+
+.courseslist-container p{
+    width: auto;
+    min-height: 50px;
+    height: auto;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s all;
+    padding-inline: 15px;
+    margin-inline: 10px;
+}
+
+.courseslist-container p:hover{
+    cursor: pointer;
+    background-color: #6964f7;
+    color: white;
+}
+
+.courses-list{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}

@@ -16,6 +16,8 @@ import Course4 from "./Components/HtmlCourse/Course4";
 import Course5 from "./Components/HtmlCourse/Course5";
 import Registration from "./Components/mainPageItems/Registration";
 import LogIn from "./Components/mainPageItems/LogIn";
+import HtmlCourseLayout from "./Components/HtmlCourse/HtmlCourseLayout";
+import CoursesList from "./Components/HtmlCourse/CoursesList";
 
 function App() {
   return (
@@ -27,12 +29,16 @@ function App() {
         <Route path="/Courses" element={<CoursesPage />} />
         <Route path="/Register" element={<Registration />} />
         <Route path="/LogIn" element={<LogIn />} />
-        <Route path="/Html" element={<Entering />} />
-        <Route path="/Html/Course1" element={<Course1 />} />
-        <Route path="/Html/Course2" element={<Course2 />} />
-        <Route path="/Html/Course3" element={<Course3 />} />
-        <Route path="/Html/Course4" element={<Course4 />} />
-        <Route path="/Html/Course5" element={<Course5 />} />
+
+        <Route path="/Html" element={<HtmlCourseLayout />}>
+          <Route index element={<Entering />} />
+          <Route path="/Html/CoursesList" element={<CoursesList />} />
+          <Route path="/Html/Course1" element={<Course1 />} />
+          <Route path="/Html/Course2" element={<Course2 />} />
+          <Route path="/Html/Course3" element={<Course3 />} />
+          <Route path="/Html/Course4" element={<Course4 />} />
+          <Route path="/Html/Course5" element={<Course5 />} />
+        </Route>
         <Route path="/Ground" element={<CodePlayGround />} />
         <Route path="/TechnicalWorks" element={<TechnicalWorks />} />
       </Routes>
