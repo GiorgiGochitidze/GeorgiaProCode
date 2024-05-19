@@ -20,15 +20,6 @@ const Footer = () => {
                         <li><a href="https://www.facebook.com/groups/1307912069858435" target='_blank'>დაგვიკავშირდით ფეისბუქზე</a></li>
                     </ul>
                 </div>
-                {/* <div className="footer-col">
-                    <h4>online shop</h4>
-                    <ul>
-                        <li><a href="#">watch</a></li>
-                        <li><a href="#">bag</a></li>
-                        <li><a href="#">shoes</a></li>
-                        <li><a href="#">dress</a></li>
-                    </ul>
-                </div> */}
                 <div className="footer-col">
                     <h4>მოგვყევით სოც ქსელებში</h4>
                     <div className="social-links">
@@ -39,7 +30,6 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        {/* <i className='sponsor'>Made By VIOR Community</i> */}
    </footer>
      );
 }

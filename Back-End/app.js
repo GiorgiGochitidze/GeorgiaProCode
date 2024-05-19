@@ -6,12 +6,17 @@ const jwt = require("jsonwebtoken"); // Import JWT module
 const bcrypt = require("bcrypt"); // Import bcrypt for password hashing
 const User = require("./User.js");
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 app.use(cors());
 app.use(express.json());
 
+const dbUser = process.env.USER_PASS
+
+const uri = `mongodb+srv://giorgigochitidze5555:${dbUser}@cluster0.bjiijcc.mongodb.net/GeorgianProCode?retryWrites=true&w=majority&appName=Cluster0`;
+
 mongoose
-  .connect("mongodb://localhost:27017/GeorgianProCode")
+  .connect(uri)
   .then(() => {
     console.log("Succesfully Connected to MongoDB");
   })

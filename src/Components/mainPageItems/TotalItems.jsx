@@ -11,7 +11,7 @@ const TotalItems = () => {
 
   useEffect(() => {
     axios
-      .post("http://localhost:5000/loadUsersList")
+      .post("https://georgiaprocode.onrender.com/loadUsersList")
       .then((response) => {
         setUsers(response.data);
       })

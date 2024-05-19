@@ -21,7 +21,7 @@ const Registration = () => {
     }
 
     axios
-      .post("http://localhost:5000/register", {
+      .post("https://georgiaprocode.onrender.com/register", {
         userName,
         gmail,
         password,

@@ -1,29 +1,79 @@
-import CodePlayGround from "../CodePlayGround";
 import { Link } from "react-router-dom";
+import "./css/entering.css";
 
 const Course4 = () => {
   return (
     <div className="entering-container">
-      <h1>ცხრილები HTML-ში ordered და unordered lists</h1>
+      <h1>ატრიბუტები/Attributes</h1>
 
-      <p><strong>Unordered Lists - &lt;ul&gt;</strong> - არის ცხრილის ისეთი ვერსია რომელსაც არააქვს რაიმე განსაზღვრული
-      განლაგება თუ თანმიმდევრობა, ასევე ul ტეგი იღებს მეორე ელემენტს li-ს ანუ იგივე <b>list items</b> რომელიც განსაზღვრავს
-      ცალკეული ელემენტების გამოსახვას თანმიმდევრულ ან არა თანმიმდევრულ ცხრილში "ul/ol"<br />
-      <b>რა არის ol?</b> ol არის Ordered List რომელიც არის დალაგებული ან ნუმირებული, ol ცხრილებში გვაქვს ატრიბუტები
-      type და start: <b>type</b> ატრიბუტი განსაზღვრავს იმას თუ როგორ იქნება ნუმირებული ცხრილი, ეს იქნება რიცხვები, თუ 
-      ასობგერები, დიდი რომაული რიცხვები თუ პატარა და ა.შ. <br />
-      <strong>start ატრიბუტი - </strong> გამოიყენება ცხრილში პირველი ელემენტისთვის რიგითობის მისანიჭებლად მაგალითად:
-      თუ გვინდა რომ ელემენტების თვლა დაიწყოს 5-იდან და ისე გაიზარდოს ჩავწერთ start="5" და ათვლა დაიწყება 5-იდან
-      ასევე გვაქვს ატრიბუტი value, li ელემენტისათვის რომელიც ანიჭებს მნიშვნელობას რიგითობაში მაგალითად გვინდა რომ ესა თუ ის 
-      li ელემენტი იყოს 100-ე li-ს ვუწერთ ასე &lt;li value="100"&gt;this is li&lt;/li&gt; მივიღებთ ამას: 100. this is li <br />
-      ქვემოთ შეგიძლიათ იხილოთ მაგალითი ინფორმაციიდან გამომდინარე:
+      <h3>რა არის ატრიბუტები?</h3>
+      <p style={{ textAlign: "justify" }}>
+        ყოველ HTML ელემენტს აქვს ატრიბუტები. ატრიბუტები წარმოადგენენ სხვადასხვა სახის
+        ინფორმაციას ელემენტის შესახებ. ატრიბუტები ყოველთვის იწყება ელემენტის დასაწყისიდან.
+        მაგ: <br />
+        <span className="code">&lt;div style="color:red;"&gt;&lt;/div&gt;</span>, 
+        ატრიბუტები name/key სახით გვხდება, მაგ: name="key":
+        <span className="code"> style="color:red;"</span>
       </p>
 
-      <CodePlayGround src="https://codesandbox.io/embed/s69tmm?view=Editor+%2B+Preview&module=%2Findex.html" />
+      <h1>ძირითადი ატრიბუტები</h1>
+      <ul className="example-list" style={{ listStyleType: "disc", textAlign: "start" }}>
+        <li><span className="code">&lt;div id="header"&gt;&lt;/div&gt;</span></li>
+        <li><span className="code">&lt;p class="intro"&gt;Welcome to the course!&lt;/p&gt;</span></li>
+        <li><span className="code">&lt;p style="color:blue;"&gt;This is a blue text.&lt;/p&gt;</span></li>
+        <li><span className="code">&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</span></li>
+        <li><span className="code">&lt;html lang="en"&gt;</span></li>
+      </ul>
 
-      <Link to='/Html/Course5'><button>გაკვეთილი N5</button></Link>
+      <p>
+        <span className="code">id="header"</span> და <span className="code">class="header"</span> 
+        გამოიყენება სტილებეის მისანიჭებლად ელემენტისთვის, ხოლო 
+        <span className="code">id</span> როგორც სტილიზაციის ასევე ელემენტისთვის 
+        უნიკალური ინდენტიფიცირების მნიშვნელობის მისანიჭებლად გამოიყენება. <br /><br />
+        <span className="code">style</span> ატრიბუტი გამოიყენება Inline Styling-ისთვის. 
+        style ატრიბუტის საშუალებით შეგიძლიათ მიანიჭოთ ნებისმიერ ელემენტს იგივე css სტილები, 
+        მაგრამ უკეთესია რომ გამოიყენოთ CSS-ი. <span className="code">title</span> ატრიბუტი 
+        გამოიყენება ელემენტისთვის იმ სახელის მინიჭებისთვის, რომელიც გამოჩნდება მაუსის 
+        მიტანის და გაჩერებიდან 2 წამში. მაგალითი იხილეთ ქვემოთ.
+      </p>
+
+      <h1>Form Attributes</h1>
+      <p style={{ textAlign: "justify" }}>
+        ფორმები HTML-ის მნიშვნელოვანი ნაწილია. ისინი გამოიყენება მომხმარებლის მიერ 
+        ინფორმაციის შეყვანისათვის. აი, რამდენიმე ძირითადი ატრიბუტი, რომლებიც გამოიყენება ფორმებში:
+      </p>
+      <ul className="example-list" style={{ listStyleType: "disc", textAlign: "start" }}>
+        <li><span className="code">&lt;form action="/submit-form" method="post"&gt;&lt;/form&gt;</span></li>
+        <li><span className="code">&lt;input type="text" name="username" required /&gt;</span></li>
+        <li><span className="code">&lt;input type="email" name="email" placeholder="Enter your email" /&gt;</span></li>
+        <li><span className="code">&lt;input type="submit" value="Submit" /&gt;</span></li>
+      </ul>
+      <p>
+        <span className="code">action</span> ატრიბუტი განსაზღვრავს URL-ს, სადაც ფორმის 
+        მონაცემები გაგზავნილია. <span className="code">method</span> აჩვენებს მონაცემების 
+        გაგზავნის მეთოდს (GET ან POST). <span className="code">required</span> ატრიბუტი 
+        ველში აუცილებლად შევსებულად აქცევს, ხოლო <span className="code">placeholder</span> 
+        აწერს მითითებულ ტექსტს შეყვანის ველში.
+      </p>
+
+      <h1>Global Attributes</h1>
+      <p style={{ textAlign: "justify" }}>
+        გლობალური ატრიბუტები შეიძლება გამოყენებულ იქნას ნებისმიერი HTML ელემენტისათვის. 
+        აი, ზოგიერთი მათგანი:
+      </p>
+      <ul className="example-list" style={{ listStyleType: "disc", textAlign: "start" }}>
+        <li><span className="code">class</span> - გამოიყენება ელემენტების კლასების დასამატებლად.</li>
+        <li><span className="code">id</span> - ელემენტის უნიკალური იდენტიფიკატორი.</li>
+        <li><span className="code">style</span> - Inline სტილები ელემენტისთვის.</li>
+        <li><span className="code">title</span> - ტექსტი, რომელიც გამოჩნდება, როცა მომხმარებელი მაუსს მიიტანს ელემენტზე.</li>
+        <li><span className="code">lang</span> - განსაზღვრავს ელემენტის ენობრივ კოდს.</li>
+      </ul>
+
+      <Link to='/Html/Course5'>
+        <button>გაკვეთილი N5</button>
+      </Link>
     </div>
   );
 };
-2
+
 export default Course4;

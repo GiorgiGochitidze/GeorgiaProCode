@@ -1,6 +1,6 @@
-import { IoHomeOutline } from "react-icons/io5";
 import "./css/navigation.css";
 import { Link } from "react-router-dom";
+import { CiCircleList } from "react-icons/ci";
 
 const Navigation = () => {
   return (
@@ -11,7 +11,7 @@ const Navigation = () => {
           <div
             className="navigation-icon"
             >
-            <IoHomeOutline size={25} color="white" />
+            <CiCircleList size={25} color="white" />
           </div>
             </Link>
         </div>

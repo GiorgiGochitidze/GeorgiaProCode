@@ -1,51 +1,26 @@
-import CodePlayGround from "../CodePlayGround";
 import { Link } from "react-router-dom";
 
 const Course5 = () => {
   return (
     <div className="entering-container">
-      <h1>Tables HTML-ში</h1>
+      <h1>ცხრილები HTML-ში ordered და unordered lists</h1>
 
       <p>
-        ალბათ ყველას გაქვთ გავლილი მათემატიკაში დიაგრამები და ცხრილები სწორედ
-        ერთერთ მსგავს გავივლით ჩვენ ასეთი ცხრილები გამოიყენება მონაცემების უფრო
-        დეტალურად განაწილებისათვის აქ გვემატება შემდეგი ელემენტები table, tr, td
-        და th, მოდიშ შევქმნათ ჩვეულებრივი ცხრილი.
+        <strong>Unordered Lists - <span className="code">&lt;ul&gt;</span></strong> - არის ცხრილის ისეთი ვერსია, რომელსაც არააქვს რაიმე განსაზღვრული
+        განლაგება თუ თანმიმდევრობა, ასევე <span className="code">&lt;ul&gt;</span> ტეგი იღებს მეორე ელემენტს <span className="code">&lt;li&gt;</span>-ს ანუ იგივე <b>list items</b> {" "}
+        რომელიც განსაზღვრავს ცალკეული ელემენტების გამოსახვას თანმიმდევრულ ან არა თანმიმდევრულ ცხრილში <span className="code">&lt;ul&gt;</span>/<span className="code">&lt;ol&gt;</span><br />
+        <b>რა არის <span className="code">&lt;ol&gt;</span>?</b> <span className="code">&lt;ol&gt;</span> არის Ordered List, რომელიც არის დალაგებული ან ნუმირებული. 
+        <span className="code">&lt;ol&gt;</span> ცხრილებში გვაქვს ატრიბუტები <b>type</b> და <b>start</b>: <b>type</b> ატრიბუტი განსაზღვრავს იმას, თუ როგორ იქნება ნუმირებული 
+        ცხრილი, ეს იქნება რიცხვები, თუ ასობგერები, დიდი რომაული რიცხვები თუ პატარა და ა.შ. <br />
+        <strong>start ატრიბუტი - </strong> გამოიყენება ცხრილში პირველი ელემენტისთვის რიგითობის მისანიჭებლად, მაგალითად: 
+        თუ გვინდა, რომ ელემენტების თვლა დაიწყოს 5-იდან და ისე გაიზარდოს, ჩავწერთ <span className="code">start="5"</span> და ათვლა დაიწყება 5-იდან.
+        ასევე გვაქვს ატრიბუტი <span className="code">value</span>, <span className="code">&lt;li&gt;</span> ელემენტისათვის, რომელიც ანიჭებს 
+        მნიშვნელობას რიგითობაში. მაგალითად, გვინდა რომ ესა თუ ის <span className="code">&lt;li&gt;</span> ელემენტი იყოს 100-ე, <span className="code">&lt;li value="100"&gt;</span> 
+        this is li <span className="code">&lt;/li&gt;</span> მივიღებთ ამას: 100. this is li <br />
+        ქვემოთ შეგიძლიათ იხილოთ მაგალითი ინფორმაციიდან გამომდინარე:
       </p>
 
-      <CodePlayGround src="https://codesandbox.io/embed/3gxvxh?view=Editor+%2B+Preview&module=%2Findex.html" />
-
-      <h1>Table რიგები და უჯრედები</h1>
-
-      <p>
-        Table-ში tr განსაზღვრავს ცხრილის რიგებს სიგანეში ხოლო td განსაზღვრავს
-        ცხრილის უჯრედებს სიგრძეში.
-      </p>
-
-      <CodePlayGround src="https://codesandbox.io/embed/xmszxg?view=Editor+%2B+Preview&module=%2Findex.html" />
-
-      <h1>Table Header-ები, border და align ატრიბუტი</h1>
-
-      <p>
-        იგივე ცხრილის სათაურები მსგავსია h1 ტეგისა, ხოლო border ატრიბუტი
-        გამოიყენება ცხრილის border-ის სისქეს ხოლო ატრიბუტი align გამოიყენება
-        ცხრილის გასაცენტრად, მარჯვნივ ან მარცხნივ გადატანისთვის
-      </p>
-
-      <CodePlayGround src="https://codesandbox.io/embed/wmhkds?view=Editor+%2B+Preview&module=%2Findex.html" />
-
-      <h1>cellspacing და cellpadding</h1>
-
-      <p>
-        ასევე table element-ს აქვს ატრიბუტები cellspacing და cellpadding,
-        cellspacing გამოიყენება უჯრედებს შორის დაშორებისათვის როგორც
-        ჰორიზონტალურად ისევე ვერტიკალურადაც ხოლო cellpadding გამოიყენება
-        დაშორების გასაკეთებლად უჯრედების კონტენტისა და მათ border-ებს შორის
-      </p>
-
-      <CodePlayGround src="https://codesandbox.io/embed/sjqrgx?view=Editor+%2B+Preview&module=%2Findex.html" />
-
-      <Link to='/TechnicalWorks'><button>გაკვეთილი N6</button></Link>
+      <Link to='/Html/Course6'><button>გაკვეთილი N6</button></Link>
     </div>
   );
 };
