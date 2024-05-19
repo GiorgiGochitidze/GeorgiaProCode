@@ -27,7 +27,7 @@ const Registration = () => {
         password,
       })
       .then((response) => {
-        console.log(response.data); // Log response from the server
+        setErrorMessage('რეგისტრაცია წარმატებულად დასრულდა')
         setTimeout(() => navigate("/LogIn"), 1500);
       })
       .catch((error) => {
