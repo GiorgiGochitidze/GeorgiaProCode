@@ -16,9 +16,19 @@ html{
   font-display: fallback;
 }
 
+@font-face {
+  font-family: 'mxedruli'; /* The name you want to use for your custom font */
+  src: url('./Components/CSS/Fonts/bpg_algeti.otf') format('openType');
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.33vw;
+  font-display: fallback;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'georgian-font', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }

@@ -11,6 +11,11 @@
   text-align: center;
 }
 
+.entering-container p{
+  font-family: 'mxedruli', sans-serif;
+  font-size: 18px;
+}
+
 .entering-container button {
   width: 200px;
   height: 40px;
@@ -36,6 +41,79 @@
     margin: 10px 0 !important; /* Force margin */
   }
 
+  .challange {
+    background-color: #605af7; /* Primary color */
+    color: white; /* Text color */
+    padding: 15px 20px; /* Adjusted padding */
+    margin: 20px 0; /* Margin for spacing */
+    border-radius: 10px; /* Rounded corners */
+    font-family: 'mxedruli', sans-serif; /* Consistent font */
+    font-size: 18px; /* Font size */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    letter-spacing: 3px;
+    text-align: center; /* Align text to the left */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  }
+  
+  .challange:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+
 .example-list li {
   margin-bottom: 20px;
+  font-family: 'mxedruli', sans-serif;
+  font-size: 18px;
+}
+
+.entering-container li{
+  font-family: 'mxedruli', sans-serif;
+  font-size: 18px;
+}
+
+.bot-container{
+  width: auto;
+  position: relative;
+}
+
+.bot-image{
+  width: 300px;
+}
+
+.bot-hello-txt{
+  position: absolute;
+  color: white;
+  letter-spacing: 5px;
+  right: 10px;
+  top: 130px;
+}
+
+.code-inputs{
+  width: 20px;
+  height: 23px;
+  text-align: center;
+  border: 1px solid white;
+  margin-right: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  padding: 1px 4px;
+  background-color: transparent;
+}
+
+.code-inputs:focus{
+  outline: none;
+}
+
+@media screen and (max-width: 340px) {
+  .bot-image{
+    width: 90%;
+  }
+
+  .bot-hello-txt{
+    top: 42%;
+    right: 7%;
+    font-size: 4vw !important;
+  }
 }

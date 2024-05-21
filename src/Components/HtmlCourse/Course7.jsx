@@ -19,37 +19,37 @@ const Course7 = () => {
         <span className="code">&lt;input&gt;</span> ელემენტი გამოიყენება
         მონაცემების შესაყვანად ფორმაში. მას შეუძლია ჰქონდეს სხვადასხვა ტიპი,
         მაგალითად:
-        <ul className="example-list" style={{ textAlign: "center" }}>
-          <li>
-            <span className="code">type="text"</span> - ტექსტური ველი{" "}
-            <input type="text" placeholder="შეიყვანეთ ტექსტი" />
-          </li>
-          <li>
-            <span className="code">type="password"</span> - პაროლის ველი {""}
-            <input type="password" placeholder="შეიყვანეთ ტექსტი" />
-          </li>
-          <li>
-            <span className="code">type="email"</span> - ელ. ფოსტის ველი{" "}
-            <input type="email" placeholder="example@gmail.com" />
-          </li>
-          <li>
-            <span className="code">type="number"</span> - რიცხვების ველი{" "}
-            <input type="number" placeholder="შეიყვანეთ რიცხვი" />
-          </li>
-          <li>
-            <span className="code">type="date"</span> - თარიღის ველი{" "}
-            <input type="date" />
-          </li>
-          <li>
-            <span className="code">type="checkbox"</span> - ჩექბოქსი{" "}
-            <input style={{height: '20px'}} type="checkbox" />
-          </li>
-          <li>
-            <span className="code">type="radio"</span> - რადიო ღილაკი
-            <input style={{height: '20px'}} type="radio" />
-          </li>
-        </ul>
       </p>
+      <ul className="example-list" style={{ textAlign: "center" }}>
+        <li>
+          <span className="code">type="text"</span> - ტექსტური ველი{" "}
+          <input type="text" placeholder="შეიყვანეთ ტექსტი" />
+        </li>
+        <li>
+          <span className="code">type="password"</span> - პაროლის ველი {""}
+          <input type="password" placeholder="შეიყვანეთ ტექსტი" />
+        </li>
+        <li>
+          <span className="code">type="email"</span> - ელ. ფოსტის ველი{" "}
+          <input type="email" placeholder="example@gmail.com" />
+        </li>
+        <li>
+          <span className="code">type="number"</span> - რიცხვების ველი{" "}
+          <input type="number" placeholder="შეიყვანეთ რიცხვი" />
+        </li>
+        <li>
+          <span className="code">type="date"</span> - თარიღის ველი{" "}
+          <input type="date" />
+        </li>
+        <li>
+          <span className="code">type="checkbox"</span> - ჩექბოქსი{" "}
+          <input style={{ height: "20px" }} type="checkbox" />
+        </li>
+        <li>
+          <span className="code">type="radio"</span> - რადიო ღილაკი
+          <input style={{ height: "20px" }} type="radio" />
+        </li>
+      </ul>
 
       <ul className="example-list" style={{ textAlign: "center" }}>
         <li>
