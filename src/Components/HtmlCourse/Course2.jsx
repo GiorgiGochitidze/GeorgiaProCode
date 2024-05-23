@@ -3,35 +3,98 @@ import "./css/entering.css";
 import pAndH1 from "./videos/pAndH1.mp4";
 import bAndStrong from "./videos/bAndStrong.mp4";
 import botImage from "../../assets/botimage.png";
-import { useState, useEffect } from "react";
+import { useReducer, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FaRegLightbulb } from "react-icons/fa";
+
+const initialState = {
+  inputValues: {
+    input1: "",
+    input2: "",
+  },
+  taskState: false,
+  hint: false,
+  brTask: "",
+  brState: false,
+  StrongTaskValues: {
+    strong1: "",
+    strong2: "",
+  },
+};
+
+const HANDLE_INPUT_CHANGE = "HANDLE_INPUT_CHANGE";
+const HANDLE_STRONG_CHANGE = "HANDLE_STRONG_CHANGE";
+const SET_TASK_STATE = "SET_TASK_STATE";
+const SET_HINT = "SET_HINT";
+const SET_BR_TASK = "SET_BR_TASK";
+const SET_BR_STATE = "SET_BR_STATE";
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case HANDLE_INPUT_CHANGE:
+      return {
+        ...state,
+        inputValues: {
+          ...state.inputValues,
+          [action.payload.name]: action.payload.value,
+        },
+        taskState: false,
+      };
+    case SET_TASK_STATE:
+      return {
+        ...state,
+        taskState: action.payload,
+      };
+    case SET_HINT:
+      return {
+        ...state,
+        hint: action.payload,
+      };
+    case SET_BR_TASK:
+      return {
+        ...state,
+        brTask: action.payload,
+        taskState: action.payload === "br",
+      };
+    case SET_BR_STATE:
+      return {
+        ...state,
+        brState: action.payload,
+      };
+    case HANDLE_STRONG_CHANGE:
+      return {
+        ...state,
+        StrongTaskValues: {
+          ...state.StrongTaskValues,
+          [action.payload.name]: action.payload.value,
+        },
+      };
+    default:
+      return state;
+  }
+};
 
 const Course2 = () => {
-  const [inputValues, setInputValues] = useState({
-    input1: "",
-    input2: ""
-  });
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-  const [taskState, setTaskState] = useState(false)
+  const { inputValues, StrongTaskValues, brState, taskState, hint, brTask } =
+    state;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setInputValues({
-      ...inputValues,
-      [name]: value,
-    });
-    setTaskState(false)
+    dispatch({ type: HANDLE_INPUT_CHANGE, payload: { name, value } });
+  };
+
+  const handleStrongTaskChange = (e) => {
+    const { name, value } = e.target;
+    dispatch({ type: HANDLE_STRONG_CHANGE, payload: { name, value } });
   };
 
   const handleCheckTask = () => {
-    const correctValues = Object.values(inputValues).every((val) => val === "p");
-    if (correctValues) {
-      console.log("It's correct!");
-      setTaskState(true)
-    } else {
-      setTaskState(false)
-      console.log("It's wrong!");
-    }
+    const correctValues = Object.values(inputValues).every(
+      (val) => val === "p"
+    );
+    dispatch({ type: SET_TASK_STATE, payload: correctValues });
   };
 
   useEffect(() => {
@@ -40,6 +103,16 @@ const Course2 = () => {
       handleCheckTask();
     }
   }, [inputValues]);
+
+  useEffect(() => {
+    if (brTask === "br") {
+      console.log("correct");
+      dispatch({ type: SET_BR_STATE, payload: true });
+    } else {
+      console.log("incorrect");
+      dispatch({ type: SET_BR_STATE, payload: false });
+    }
+  }, [brTask]);
 
   return (
     <div className="entering-container">
@@ -94,33 +167,59 @@ const Course2 = () => {
 
       <div className="bot-container">
         <img className="bot-image" src={botImage} alt="bot image" />
-        {taskState && <motion.p initial={{opacity: 0, y: 100}} animate={{opacity: 1, y: 0}} className="bot-hello-txt" style={{ fontFamily: "georgian-font" }}>
-          Hello!
-        </motion.p>}
+        {taskState && (
+          <motion.p
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="bot-hello-txt"
+            style={{ fontFamily: "georgian-font" }}
+          >
+            Hello!
+          </motion.p>
+        )}
       </div>
       <span className="challange">
         {" "}
         &lt;
         <input
           name="input1"
+          style={{ width: "20px", height: "23px" }}
           onChange={handleInputChange}
           className="code-inputs"
           type="text"
           maxLength={1}
         />
-        &gt;Hello!&lt;
-        /
+        &gt;Hello!&lt; /
         <input
           name="input2"
           onChange={handleInputChange}
+          style={{ width: "20px", height: "23px" }}
           className="code-inputs"
           type="text"
           maxLength={1}
         />
         &gt;{" "}
-
-        {taskState && <motion.p initial={{opacity: 0, y: 100}} animate={{opacity: 1, y: 0}}>ყოჩაღ დავალება სწორად შეასრულე</motion.p>}
-        {taskState == false && <motion.p initial={{opacity: 0, y: 100}} animate={{opacity: 1, y: 0}}>რაღაც შეცდომაა შეასწორე კოდი 😀</motion.p>}
+        <FaRegLightbulb
+          onClick={() => dispatch({ type: SET_HINT, payload: !hint })}
+          className="hint-icon"
+          style={{ marginLeft: "20px" }}
+          size={25}
+          color="white"
+        />
+        {taskState && (
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            ყოჩაღ დავალება სწორად შეასრულე
+          </motion.p>
+        )}
+        {!taskState && (
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            რაღაც შეცდომაა შეასწორე კოდი 😀
+          </motion.p>
+        )}
+        {hint && (
+          <p>რა უნდა გამოვიყენოთ იმისათვის რომ დავწეროთ ტექსტი ან პარაგრაფი?</p>
+        )}
       </span>
 
       <h2>&lt;b&gt; და &lt;br&gt; ელემენტები/ტეგები</h2>
@@ -155,6 +254,63 @@ const Course2 = () => {
       <video loop controls width="90%">
         <source src={bAndStrong} type="video/mp4" />
       </video>
+
+      <span className="challange">
+        გვჭირდება შენი დახმარება მინდა რომ წერტილის შემდეგ ტექსტი დაიწყოს ახალი
+        ხაზიდან და მისი პირველი სიტყვა იყოს მნიშვნელოვანი და მუქი.
+        {brState && <br />}
+        &lt;
+        <input
+          name="input1"
+          value={brTask}
+          style={{ width: "30px", height: "23px" }}
+          onChange={(e) =>
+            dispatch({ type: SET_BR_TASK, payload: e.target.value })
+          }
+          className="code-inputs"
+          type="text"
+          maxLength={2}
+        />
+        &gt; {brState && <strong style={{ color: "cyan" }}>Lorem</strong>}{" "}
+        {!brState && (
+          <span>
+            &lt;{" "}
+            <input
+              name="strong1"
+              value={StrongTaskValues.strong1}
+              style={{ width: "70px", height: "23px" }}
+              onChange={handleStrongTaskChange}
+              className="code-inputs"
+              type="text"
+              maxLength={6}
+            />
+            &gt;Lorem&lt;/
+            <input
+              name="strong2"
+              value={StrongTaskValues.strong2}
+              style={{ width: "70px", height: "23px" }}
+              onChange={handleStrongTaskChange}
+              className="code-inputs"
+              type="text"
+              maxLength={6}
+            />
+            &gt;
+          </span>
+        )}{" "}
+        ipsum dolor sit amet consectetur adipisicing elit.
+        <br />
+        <br />
+        {brState && (
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            ყოჩაღ დავალება სწორად შეასრულე 😀🎉
+          </motion.p>
+        )}
+        {!brState && (
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+            რაღაც შეცდომაა შეასწორე კოდი 😀
+          </motion.p>
+        )}
+      </span>
 
       <Link to="/Html/Course3">
         <button>გაკვეთილი N3</button>

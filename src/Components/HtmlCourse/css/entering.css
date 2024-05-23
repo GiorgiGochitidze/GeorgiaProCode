@@ -90,8 +90,6 @@
 }
 
 .code-inputs{
-  width: 20px;
-  height: 23px;
   text-align: center;
   border: 1px solid white;
   margin-right: 5px;
@@ -104,6 +102,14 @@
 
 .code-inputs:focus{
   outline: none;
+}
+
+.hint-icon{
+  color: white;
+}
+
+.hint-icon:hover{
+  cursor: pointer;
 }
 
 @media screen and (max-width: 340px) {
