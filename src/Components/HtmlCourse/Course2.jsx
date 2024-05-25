@@ -6,6 +6,7 @@ import botImage from "../../assets/botimage.png";
 import { useReducer, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaRegLightbulb } from "react-icons/fa";
+import SourceCode from "./SourceCode";
 
 const initialState = {
   inputValues: {
@@ -105,14 +106,18 @@ const Course2 = () => {
   }, [inputValues]);
 
   useEffect(() => {
-    if (brTask === "br") {
+    if (
+      brTask === "br" &&
+      StrongTaskValues.strong1 === "strong" &&
+      StrongTaskValues.strong2 === "strong"
+    ) {
       console.log("correct");
       dispatch({ type: SET_BR_STATE, payload: true });
     } else {
       console.log("incorrect");
       dispatch({ type: SET_BR_STATE, payload: false });
     }
-  }, [brTask]);
+  }, [brTask, StrongTaskValues]);
 
   return (
     <div className="entering-container">
@@ -149,6 +154,16 @@ const Course2 = () => {
       <video loop controls width="90%">
         <source src={pAndH1} type="video/mp4" />
       </video>
+
+      <p>
+        იხილეთ კოდი აქ:{" "}
+        <SourceCode
+          CourseName={"Html-Course"}
+          src={
+            "https://github.com/GiorgiGochitidze/HTML-Course/blob/main/%E1%83%9E%E1%83%90%E1%83%A0%E1%83%90%E1%83%92%E1%83%A0%E1%83%90%E1%83%A4%E1%83%94%E1%83%91%E1%83%98%20%E1%83%93%E1%83%90%20%E1%83%A1%E1%83%90%E1%83%97%E1%83%90%E1%83%A3%E1%83%A0%E1%83%94%E1%83%91%E1%83%98.html"
+          }
+        />
+      </p>
 
       <p>
         როგორც ხედავთ აქ ვიყენებ{" "}
@@ -255,23 +270,38 @@ const Course2 = () => {
         <source src={bAndStrong} type="video/mp4" />
       </video>
 
+      <p>
+        იხილეთ კოდი აქ:{" "}
+        <SourceCode
+          CourseName={"HTML-Course"}
+          src={
+            "https://github.com/GiorgiGochitidze/HTML-Course/blob/main/b%2C%20br%20%E1%83%93%E1%83%90%20strong%20%E1%83%A2%E1%83%94%E1%83%92%E1%83%94%E1%83%91%E1%83%98.html"
+          }
+        />
+      </p>
+
       <span className="challange">
         გვჭირდება შენი დახმარება მინდა რომ წერტილის შემდეგ ტექსტი დაიწყოს ახალი
         ხაზიდან და მისი პირველი სიტყვა იყოს მნიშვნელოვანი და მუქი.
         {brState && <br />}
-        &lt;
-        <input
-          name="input1"
-          value={brTask}
-          style={{ width: "30px", height: "23px" }}
-          onChange={(e) =>
-            dispatch({ type: SET_BR_TASK, payload: e.target.value })
-          }
-          className="code-inputs"
-          type="text"
-          maxLength={2}
-        />
-        &gt; {brState && <strong style={{ color: "cyan" }}>Lorem</strong>}{" "}
+        {!brState && (
+          <>
+            &lt;
+            <input
+              name="input1"
+              value={brTask}
+              style={{ width: "30px", height: "23px" }}
+              onChange={(e) =>
+                dispatch({ type: SET_BR_TASK, payload: e.target.value })
+              }
+              className="code-inputs"
+              type="text"
+              maxLength={2}
+            />
+            &gt;
+          </>
+        )}
+        {brState && <strong style={{ color: "cyan" }}>Lorem</strong>}{" "}
         {!brState && (
           <span>
             &lt;{" "}

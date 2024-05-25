@@ -43,9 +43,8 @@ const Course3 = () => {
         ინფორმაციას ელემენტის შესახებ მის კლასს სტილიზაციას მაგალითად
         ატრიბუტებია: <span className="code">id</span>,{" "}
         <span className="code">class</span>, <span className="code">style</span>
-        , <span className="code">title</span>,{" "}
-        <span className="code">lang</span>, <span className="code">src</span>,
-        <span className="code">href</span>,{" "}
+        ,<span className="code">title</span>, <span className="code">lang</span>
+        , <span className="code">src</span>,<span className="code">href</span>,{" "}
         <span className="code">disabled-ღილაკისთვის</span>,{" "}
         <span className="code">target</span> და ა.შ. <br />
         აქ ჩვენ შევისწავლით ჯერ <b>href</b>, <b>target</b> და შემდეგ <b>src</b>{" "}
