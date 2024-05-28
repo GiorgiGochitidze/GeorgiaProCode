@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import divSpanAndEtc from "./videos/divSpanAndEtc.mp4";
+import SourceCode from "./SourceCode";
 
 const Course3 = () => {
   return (
@@ -15,6 +17,17 @@ const Course3 = () => {
         მიზნებისთვის, რადგან მისი გამოყენებით შესაძლებელია ერთ კონტეინერში
         მოქცეული ელემენტების სტილის და სტრუქტურის მართვა.
       </p>
+
+      <video loop controls width="90%">
+        <source src={divSpanAndEtc} type="video/mp4" />
+      </video>
+
+      <SourceCode
+      CourseName={"HTML-Course/div, span, a და img ტეგები"}
+        src={
+          "https://github.com/GiorgiGochitidze/HTML-Course/blob/main/div,%20span,%20a%20%E1%83%93%E1%83%90%20img%20%E1%83%A2%E1%83%94%E1%83%92%E1%83%94%E1%83%91%E1%83%98.html"
+        }
+      />
 
       <h1>span ელემენტი</h1>
 

@@ -158,7 +158,7 @@ const Course2 = () => {
       <p>
         იხილეთ კოდი აქ:{" "}
         <SourceCode
-          CourseName={"Html-Course"}
+          CourseName={"Html-Course/პარაგრაფები და სათაურები"}
           src={
             "https://github.com/GiorgiGochitidze/HTML-Course/blob/main/%E1%83%9E%E1%83%90%E1%83%A0%E1%83%90%E1%83%92%E1%83%A0%E1%83%90%E1%83%A4%E1%83%94%E1%83%91%E1%83%98%20%E1%83%93%E1%83%90%20%E1%83%A1%E1%83%90%E1%83%97%E1%83%90%E1%83%A3%E1%83%A0%E1%83%94%E1%83%91%E1%83%98.html"
           }
@@ -273,7 +273,7 @@ const Course2 = () => {
       <p>
         იხილეთ კოდი აქ:{" "}
         <SourceCode
-          CourseName={"HTML-Course"}
+          CourseName={"HTML-Course/b, br და strong ტეგები"}
           src={
             "https://github.com/GiorgiGochitidze/HTML-Course/blob/main/b%2C%20br%20%E1%83%93%E1%83%90%20strong%20%E1%83%A2%E1%83%94%E1%83%92%E1%83%94%E1%83%91%E1%83%98.html"
           }
@@ -301,7 +301,7 @@ const Course2 = () => {
             &gt;
           </>
         )}
-        {brState && <strong style={{ color: "cyan" }}>Lorem</strong>}{" "}
+        {brState && <strong style={{ color: "yellow" }}>Lorem</strong>}{" "}
         {!brState && (
           <span>
             &lt;{" "}
